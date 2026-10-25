@@ -1,0 +1,92 @@
+{
+  "id": "M33",
+  "name": "Local SEO and listings",
+  "family": "Online marketing",
+  "subfamily": "E. Cross-industry marketing workflows",
+  "trigger": "Local search opportunity or business listing change",
+  "steps": [
+    {
+      "action": "SearXNG + SerpBear insights",
+      "software": "SerpBear"
+    },
+    {
+      "action": "Lighthouse audit",
+      "software": "Lighthouse"
+    },
+    {
+      "action": "WordPress local pages",
+      "software": "WordPress"
+    },
+    {
+      "action": "Authorized listing API",
+      "software": "Native owner / bounded integration"
+    },
+    {
+      "action": "Matomo conversion review",
+      "software": "Matomo"
+    }
+  ],
+  "gate": "Applicable permission, approval and destination readiness valid?",
+  "output": "Audited local search presence and authorized listing actions",
+  "acceptance_tests": [
+    "Confirm source and outcome: Audited local search presence and authorized listing actions",
+    "Reject stale authorization, wrong client and repeated action",
+    "Report missing data as unknown and reconcile external effects"
+  ],
+  "upstream": [
+    "X01"
+  ],
+  "handoffs": [
+    "M04",
+    "M21"
+  ],
+  "source": "Sources/V7/Online_Marketing_Workflow_Catalog_v7_2026-10-25.json #M33",
+  "conditional": true,
+  "notes": "External business profile/listing APIs; Original source sequence is retained. All external effects additionally require the applicable final-boundary gate, including those earlier stages do not explicitly draw.",
+  "failure": "HOLD the affected channel, preserve provider IDs and event state, recheck permissions and source freshness; no blind repeat of sends, posts, rewards, payouts, or budget changes.",
+  "status": "DESIGN_SPECIFIED_NOT_DEPLOYED",
+  "baseline": "V7",
+  "consolidation_revision": 1,
+  "source_procedure": "SearXNG + SerpBear + Lighthouse → WordPress local pages → authorized external listing update → Matomo and rank tracking",
+  "source_controls": [
+    "Use durable idempotency keys for incoming events and outbound actions.",
+    "Store operational state and audit references in PostgreSQL; monitor via Prometheus/Grafana/Loki.",
+    "Human approval and required rights/factual checks bind to the exact revision and intended destination.",
+    "External platform/API access remains governed by provider permissions, policy, rate limits, and business compliance."
+  ],
+  "metrics": [
+    "local qualified leads",
+    "tracked local keyword rank",
+    "verified business listing corrections"
+  ],
+  "controls": [
+    "X01",
+    "X02",
+    "X03",
+    "X06",
+    "X10"
+  ],
+  "runtime_dependencies": [
+    "I10",
+    "I13",
+    "I15",
+    "I16",
+    "I19"
+  ],
+  "software": [
+    "Lighthouse",
+    "Matomo",
+    "Native owner / bounded integration",
+    "SerpBear",
+    "WordPress"
+  ],
+  "source_class": "retained-source-pattern",
+  "run_contract": {
+    "owner": "Assigned accountable role in OpenProject before activation",
+    "idempotency": "client_id + source_system + source_event_id + action_scope + approved_revision",
+    "retry": "Bounded retry only after retryability classification; unknown remote effects HOLD",
+    "observability": "workflow_id, run_id, correlation_id, state and redacted error; no raw PII labels",
+    "recovery": "Restore HOLD; reapply suppression/deletion and reconcile external receipts before replay",
+    "completion": "Named output plus acceptance evidence, not merely a running service"
+  }
+}

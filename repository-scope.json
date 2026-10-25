@@ -1,0 +1,5511 @@
+{
+  "schema_version": "1",
+  "repository": "CT-Infrastructure/marketing-v7-marketing",
+  "canonical_repository": "CT-Infrastructure/marketing-v7-control",
+  "original_package_manifest_sha256": "c7b6564a2e4113abb25ae3bfad15f9f7a862879e8da62f5b31f2bef4c8c859a7",
+  "outbound_effects": "HOLD",
+  "runtime_tests": "NOT_RUN",
+  "issues": [
+    {
+      "key": "CP054",
+      "title": "[CP054] SearXNG: package, secure and qualify the selected role",
+      "kind": "component",
+      "area": "applications",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-COMP-APPS",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F09"
+      ],
+      "write_paths": [
+        "deploy/components/searxng/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": null,
+      "body_path": "backlog/issues/CP054.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "component_name": "SearXNG",
+      "deployment_mode": "rootless-quadlet-when-supported",
+      "selection_required": false,
+      "body_sha256": "78212c76de7ae7836119f7d3fac0a5b5c771aef13dbfaa31a66380f2605bce6f"
+    },
+    {
+      "key": "CP055",
+      "title": "[CP055] SerpBear: package, secure and qualify the selected role",
+      "kind": "component",
+      "area": "applications",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-COMP-APPS",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F09"
+      ],
+      "write_paths": [
+        "deploy/components/serpbear/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": null,
+      "body_path": "backlog/issues/CP055.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "component_name": "SerpBear",
+      "deployment_mode": "rootless-quadlet-when-supported",
+      "selection_required": false,
+      "body_sha256": "aea73ab532b25ad66b6efeaeb0e1385ff67f51e62f9b029aa77754d304d7ae23"
+    },
+    {
+      "key": "CP061",
+      "title": "[CP061] Matomo: package, secure and qualify the selected role",
+      "kind": "component",
+      "area": "applications",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-COMP-APPS",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F09",
+        "CP085",
+        "CP028"
+      ],
+      "write_paths": [
+        "deploy/components/matomo/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": null,
+      "body_path": "backlog/issues/CP061.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "component_name": "Matomo",
+      "deployment_mode": "rootless-quadlet-when-supported",
+      "selection_required": false,
+      "body_sha256": "f87837b5757f2dcda61e331a83b19ddd8cbedafa7467c378d13ba2f7219b7e36"
+    },
+    {
+      "key": "CP139",
+      "title": "[CP139] Google Ads, Meta, other approved networks and their APIs: package, secure and qualify the selected role",
+      "kind": "provider",
+      "area": "external",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "high",
+      "parent_key": "EP-COMP-EXTERNAL",
+      "depends_on": [
+        "F05",
+        "F16"
+      ],
+      "write_paths": [
+        "deploy/components/google-ads-meta-other-approved-networks-and-their-apis/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": null,
+      "body_path": "backlog/issues/CP139.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "component_name": "Google Ads, Meta, other approved networks and their APIs",
+      "deployment_mode": "external-contract-and-mock",
+      "selection_required": false,
+      "body_sha256": "cd9f277de1483fab7c6b03716683f086e219bfb63d089ec16a19d6fa9dc06884"
+    },
+    {
+      "key": "CP140",
+      "title": "[CP140] Facebook, Instagram, LinkedIn, TikTok, YouTube, X, etc.: package, secure and qualify the selected role",
+      "kind": "provider",
+      "area": "external",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "high",
+      "parent_key": "EP-COMP-EXTERNAL",
+      "depends_on": [
+        "F05",
+        "F16"
+      ],
+      "write_paths": [
+        "deploy/components/facebook-instagram-linkedin-tiktok-youtube-x-etc/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": null,
+      "body_path": "backlog/issues/CP140.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "component_name": "Facebook, Instagram, LinkedIn, TikTok, YouTube, X, etc.",
+      "deployment_mode": "external-contract-and-mock",
+      "selection_required": false,
+      "body_sha256": "acf6390e2909ff3cca99db5e2bac98b10d6e7a18f08aed6878288c19052dbaca"
+    },
+    {
+      "key": "CP141",
+      "title": "[CP141] SMS-capable carrier/provider and jurisdictional registration: package, secure and qualify the selected role",
+      "kind": "provider",
+      "area": "external",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "high",
+      "parent_key": "EP-COMP-EXTERNAL",
+      "depends_on": [
+        "F05",
+        "F16"
+      ],
+      "write_paths": [
+        "deploy/components/sms-capable-carrier-provider-and-jurisdictional-registration/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": null,
+      "body_path": "backlog/issues/CP141.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "component_name": "SMS-capable carrier/provider and jurisdictional registration",
+      "deployment_mode": "external-contract-and-mock",
+      "selection_required": false,
+      "body_sha256": "1dd38ec7eb96e6fb540cd9f42820c9a86a94a3edde06c577f7797032bfdbf5c6"
+    },
+    {
+      "key": "CP142",
+      "title": "[CP142] Google and other official review platforms: package, secure and qualify the selected role",
+      "kind": "provider",
+      "area": "external",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "high",
+      "parent_key": "EP-COMP-EXTERNAL",
+      "depends_on": [
+        "F05",
+        "F16"
+      ],
+      "write_paths": [
+        "deploy/components/google-and-other-official-review-platforms/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": null,
+      "body_path": "backlog/issues/CP142.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "component_name": "Google and other official review platforms",
+      "deployment_mode": "external-contract-and-mock",
+      "selection_required": false,
+      "body_sha256": "99edd0e3099d49ecb4fd63b7b325b142557feb70f4be6333c7bf3037bb1316b4"
+    },
+    {
+      "key": "CP143",
+      "title": "[CP143] Google Business Profile and other listing APIs: package, secure and qualify the selected role",
+      "kind": "provider",
+      "area": "external",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "high",
+      "parent_key": "EP-COMP-EXTERNAL",
+      "depends_on": [
+        "F05",
+        "F16"
+      ],
+      "write_paths": [
+        "deploy/components/google-business-profile-and-other-listing-apis/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": null,
+      "body_path": "backlog/issues/CP143.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "component_name": "Google Business Profile and other listing APIs",
+      "deployment_mode": "external-contract-and-mock",
+      "selection_required": false,
+      "body_sha256": "938d8e6e8498761a81636a77fb6c3147dd26fe4a157b0b47c5fef980f7aa8482"
+    },
+    {
+      "key": "CP144",
+      "title": "[CP144] Payment processor / bank provider: package, secure and qualify the selected role",
+      "kind": "provider",
+      "area": "external",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "high",
+      "parent_key": "EP-COMP-EXTERNAL",
+      "depends_on": [
+        "F05",
+        "F16"
+      ],
+      "write_paths": [
+        "deploy/components/payment-processor-bank-provider/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": null,
+      "body_path": "backlog/issues/CP144.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "component_name": "Payment processor / bank provider",
+      "deployment_mode": "external-contract-and-mock",
+      "selection_required": false,
+      "body_sha256": "419b5ee0809d4e52d273c5614a40ccae430ac31362c2e414628dd33ecd682b9c"
+    },
+    {
+      "key": "CP145",
+      "title": "[CP145] Search engines and configured position-data services: package, secure and qualify the selected role",
+      "kind": "provider",
+      "area": "external",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "high",
+      "parent_key": "EP-COMP-EXTERNAL",
+      "depends_on": [
+        "F05",
+        "F16"
+      ],
+      "write_paths": [
+        "deploy/components/search-engines-and-configured-position-data-services/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": null,
+      "body_path": "backlog/issues/CP145.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "component_name": "Search engines and configured position-data services",
+      "deployment_mode": "external-contract-and-mock",
+      "selection_required": false,
+      "body_sha256": "3a0aa91d63afde80e543454d172435fcdba393db3be621b031021a5595568b72"
+    },
+    {
+      "key": "WF-M01-BUILD",
+      "title": "[WF-M01-BUILD] Lead capture and contact management: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M01/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M01",
+      "body_path": "backlog/issues/WF-M01-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "e73444712672450bd5deea049baa823afdcc8fb9ef03f037a501aa828450bf8c"
+    },
+    {
+      "key": "WF-M01-TEST",
+      "title": "[WF-M01-TEST] Lead capture and contact management: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M01-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M01/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M01",
+      "body_path": "backlog/issues/WF-M01-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "ef5a93dcb33f9e64a40206e0648e6e75d66cf102910b86a6f0fc983c31ab9934"
+    },
+    {
+      "key": "WF-M01-VERIFY",
+      "title": "[WF-M01-VERIFY] Lead capture and contact management: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M01-BUILD",
+      "depends_on": [
+        "WF-M01-BUILD",
+        "WF-M01-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP056",
+        "CP057",
+        "CP058",
+        "CP061",
+        "CP085",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY",
+        "WF-X04-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M01/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M01",
+      "body_path": "backlog/issues/WF-M01-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "a2dc5dc79b2dbb0d7d5cd8797d004f7cdeddbd905bd3d8f11eee65d1c59bfecb"
+    },
+    {
+      "key": "WF-M02-BUILD",
+      "title": "[WF-M02-BUILD] Nurture and score leads: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M02/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M02",
+      "body_path": "backlog/issues/WF-M02-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "316534306cd3ec5a91a457940d2fbff458c0b1703284d1d4ebe6378e312dda03"
+    },
+    {
+      "key": "WF-M02-TEST",
+      "title": "[WF-M02-TEST] Nurture and score leads: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M02-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M02/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M02",
+      "body_path": "backlog/issues/WF-M02-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "dc5ad29e49b164fbe860ed3d3a03691164db8e7aacc04edb223a9dac87e8ff41"
+    },
+    {
+      "key": "WF-M02-VERIFY",
+      "title": "[WF-M02-VERIFY] Nurture and score leads: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M02-BUILD",
+      "depends_on": [
+        "WF-M02-BUILD",
+        "WF-M02-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP058",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY",
+        "WF-X04-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M02/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M02",
+      "body_path": "backlog/issues/WF-M02-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "78d8ee9da101709c671ac334e04eb30107f2a068a69f0fcd9c9f498edd4b5862"
+    },
+    {
+      "key": "WF-M03-BUILD",
+      "title": "[WF-M03-BUILD] Sales follow-up: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M03/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M03",
+      "body_path": "backlog/issues/WF-M03-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "17b1a887308939cf388cc1bc1ec17f691b6103f83b00b60224c439deb5b95817"
+    },
+    {
+      "key": "WF-M03-TEST",
+      "title": "[WF-M03-TEST] Sales follow-up: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M03-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M03/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M03",
+      "body_path": "backlog/issues/WF-M03-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "62f0fb1bee3e37464e3246ea596e1083282edc031b9725d45a24d2fa213a18c2"
+    },
+    {
+      "key": "WF-M03-VERIFY",
+      "title": "[WF-M03-VERIFY] Sales follow-up: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M03-BUILD",
+      "depends_on": [
+        "WF-M03-BUILD",
+        "WF-M03-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP056",
+        "CP058",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY",
+        "WF-X04-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M03/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M03",
+      "body_path": "backlog/issues/WF-M03-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "0f07d0f8d693838e63f9f37c5a2414e5ceb43069e1c11b680a77ba5ee96b531f"
+    },
+    {
+      "key": "WF-M04-BUILD",
+      "title": "[WF-M04-BUILD] SEO content marketing: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M04/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M04",
+      "body_path": "backlog/issues/WF-M04-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "5db7d5b3fd7c182f7ea4d58cf5a9a831c2d820825aee26df2bdddc96518b3b11"
+    },
+    {
+      "key": "WF-M04-TEST",
+      "title": "[WF-M04-TEST] SEO content marketing: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M04-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M04/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M04",
+      "body_path": "backlog/issues/WF-M04-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "8dce361c0d274271e49f8bdee97cdfbce0dfb504233e30acc175b5f82f880bef"
+    },
+    {
+      "key": "WF-M04-VERIFY",
+      "title": "[WF-M04-VERIFY] SEO content marketing: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M04-BUILD",
+      "depends_on": [
+        "WF-M04-BUILD",
+        "WF-M04-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP033",
+        "CP035",
+        "CP053",
+        "CP055",
+        "CP056",
+        "CP057",
+        "CP061",
+        "CP081",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M04/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M04",
+      "body_path": "backlog/issues/WF-M04-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "d4f2aabe67eeaa8354d27a5c1cf1697b1d0ff8a6c91eaf8e7934d22b9d611dad"
+    },
+    {
+      "key": "WF-M05-BUILD",
+      "title": "[WF-M05-BUILD] Marketing analytics and attribution: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M05/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M05",
+      "body_path": "backlog/issues/WF-M05-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "970374595db9453dc60cfc1df25e5bd8408ae47fc05b11d116ff8bbd07cb4419"
+    },
+    {
+      "key": "WF-M05-TEST",
+      "title": "[WF-M05-TEST] Marketing analytics and attribution: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M05-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M05/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M05",
+      "body_path": "backlog/issues/WF-M05-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "335d6a1fd727e7ad0caca3e5f8cd59c3189fa5cba9a6aa60dea8cd0689222bdb"
+    },
+    {
+      "key": "WF-M05-VERIFY",
+      "title": "[WF-M05-VERIFY] Marketing analytics and attribution: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M05-BUILD",
+      "depends_on": [
+        "WF-M05-BUILD",
+        "WF-M05-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP041",
+        "CP055",
+        "CP058",
+        "CP060",
+        "CP061",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M05/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M05",
+      "body_path": "backlog/issues/WF-M05-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "eb723dc6f732d71300805537b631028607b27018a87fe35adb2a4ff330a85669"
+    },
+    {
+      "key": "WF-M06-BUILD",
+      "title": "[WF-M06-BUILD] Welcome email series: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M06/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M06",
+      "body_path": "backlog/issues/WF-M06-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "72eff0e78ae25926ba7eff5fa807f44b958f9003fd46f20f7c7df0f40bceac1e"
+    },
+    {
+      "key": "WF-M06-TEST",
+      "title": "[WF-M06-TEST] Welcome email series: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M06-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M06/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M06",
+      "body_path": "backlog/issues/WF-M06-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "5156c2684da9be59e949d57cbb65a7e857ac60155a1a8a00d89d51420bb79188"
+    },
+    {
+      "key": "WF-M06-VERIFY",
+      "title": "[WF-M06-VERIFY] Welcome email series: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M06-BUILD",
+      "depends_on": [
+        "WF-M06-BUILD",
+        "WF-M06-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP058",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY",
+        "WF-X04-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M06/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M06",
+      "body_path": "backlog/issues/WF-M06-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "a120adb7a0c7dcb13103c767d040e6e462c004586e73033662756717886977d9"
+    },
+    {
+      "key": "WF-M07-BUILD",
+      "title": "[WF-M07-BUILD] Abandoned cart/checkout: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M07/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M07",
+      "body_path": "backlog/issues/WF-M07-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "10625fe6459dc987c7beedaf492a1f8923e1c260491da3be922b26cbfc77c404"
+    },
+    {
+      "key": "WF-M07-TEST",
+      "title": "[WF-M07-TEST] Abandoned cart/checkout: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M07-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M07/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M07",
+      "body_path": "backlog/issues/WF-M07-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "2bfa655dc0ec4e7de4605ea771649d4d2289dcc8a82a06cc4560014470fa5258"
+    },
+    {
+      "key": "WF-M07-VERIFY",
+      "title": "[WF-M07-VERIFY] Abandoned cart/checkout: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M07-BUILD",
+      "depends_on": [
+        "WF-M07-BUILD",
+        "WF-M07-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP058",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY",
+        "WF-X04-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M07/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M07",
+      "body_path": "backlog/issues/WF-M07-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "3b154cd4848d73293a828c6d647016cc62f842d8f8cf368a7fde22300a6396e8"
+    },
+    {
+      "key": "WF-M08-BUILD",
+      "title": "[WF-M08-BUILD] Post-purchase cross-sell/upsell: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M08/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M08",
+      "body_path": "backlog/issues/WF-M08-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "8f846a4e2782670aa1514874a9ccb1d02d38d06af00444c683ef892f7ca8dc1b"
+    },
+    {
+      "key": "WF-M08-TEST",
+      "title": "[WF-M08-TEST] Post-purchase cross-sell/upsell: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M08-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M08/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M08",
+      "body_path": "backlog/issues/WF-M08-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "635c554ae4f6fb06e0b5f0419fa0b1b8187bebeeb72430430ca56e0008d9dd4e"
+    },
+    {
+      "key": "WF-M08-VERIFY",
+      "title": "[WF-M08-VERIFY] Post-purchase cross-sell/upsell: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M08-BUILD",
+      "depends_on": [
+        "WF-M08-BUILD",
+        "WF-M08-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP058",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY",
+        "WF-X04-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M08/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M08",
+      "body_path": "backlog/issues/WF-M08-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "52becb43e7703df9bd3549e5c13ca49fd373062d637a8d04ce0f6e34055f1d9c"
+    },
+    {
+      "key": "WF-M09-BUILD",
+      "title": "[WF-M09-BUILD] Dormant-customer win-back: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M09/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M09",
+      "body_path": "backlog/issues/WF-M09-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "7bcd9ce3c5c8830a2e7c442b0a37b00d43fc8ce847d3bfdb8725b859b78ae18a"
+    },
+    {
+      "key": "WF-M09-TEST",
+      "title": "[WF-M09-TEST] Dormant-customer win-back: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M09-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M09/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M09",
+      "body_path": "backlog/issues/WF-M09-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "359742e05c09f4a94fb3f4c1662c8871a575fa40ef50321e586e54422e6ff847"
+    },
+    {
+      "key": "WF-M09-VERIFY",
+      "title": "[WF-M09-VERIFY] Dormant-customer win-back: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M09-BUILD",
+      "depends_on": [
+        "WF-M09-BUILD",
+        "WF-M09-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP058",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY",
+        "WF-X04-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M09/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M09",
+      "body_path": "backlog/issues/WF-M09-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "0220e2744c8a9b3227f598c6dd88b9120bbd20b614320af5c39042fb11ebf8b9"
+    },
+    {
+      "key": "WF-M10-BUILD",
+      "title": "[WF-M10-BUILD] Paid search/social and retargeting: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M10/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M10",
+      "body_path": "backlog/issues/WF-M10-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "5cbad00261f7feeba86fda568b76b7777fe5aa07f4cae4fd56737b10434b5074"
+    },
+    {
+      "key": "WF-M10-TEST",
+      "title": "[WF-M10-TEST] Paid search/social and retargeting: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M10-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M10/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M10",
+      "body_path": "backlog/issues/WF-M10-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "de231f4496f18e80d2deaa637a6fba15108e894c3e7742dc36ee876ad651830a"
+    },
+    {
+      "key": "WF-M10-VERIFY",
+      "title": "[WF-M10-VERIFY] Paid search/social and retargeting: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M10-BUILD",
+      "depends_on": [
+        "WF-M10-BUILD",
+        "WF-M10-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP033",
+        "CP035",
+        "CP056",
+        "CP061",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M10/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M10",
+      "body_path": "backlog/issues/WF-M10-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "6a5b523b76f60a06ea4b21fa140e5aa48b8af6c4bbda843513c539fe04fc00c1"
+    },
+    {
+      "key": "WF-M11-BUILD",
+      "title": "[WF-M11-BUILD] Content discovery and calendar: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M11/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M11",
+      "body_path": "backlog/issues/WF-M11-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "0d6ea130e665d2997bb8c9ed6bbfcf6ccee00f67a7b492d2e31aff72915d32e9"
+    },
+    {
+      "key": "WF-M11-TEST",
+      "title": "[WF-M11-TEST] Content discovery and calendar: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M11-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M11/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M11",
+      "body_path": "backlog/issues/WF-M11-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "01685b50e2f89ed2749cd2571dccf4e414f32663765ce75c39b81e0c17cc31f5"
+    },
+    {
+      "key": "WF-M11-VERIFY",
+      "title": "[WF-M11-VERIFY] Content discovery and calendar: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M11-BUILD",
+      "depends_on": [
+        "WF-M11-BUILD",
+        "WF-M11-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP033",
+        "CP035",
+        "CP056",
+        "CP059",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M11/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M11",
+      "body_path": "backlog/issues/WF-M11-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "9879c2f215be2280371d8de9659d5ab89020dec6abc68dc353fb5d2d433a3718"
+    },
+    {
+      "key": "WF-M12-BUILD",
+      "title": "[WF-M12-BUILD] Video/audio repurposing: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M12/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M12",
+      "body_path": "backlog/issues/WF-M12-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "79328a2d808ca2106d7e1b12f15476e0ba9fbe19727a2f534e9c5b6e006d8ff1"
+    },
+    {
+      "key": "WF-M12-TEST",
+      "title": "[WF-M12-TEST] Video/audio repurposing: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M12-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M12/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M12",
+      "body_path": "backlog/issues/WF-M12-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "aa806ea567b316a0bc184d93987fe865323a0b14056f0e39292c6fe31fa482b4"
+    },
+    {
+      "key": "WF-M12-VERIFY",
+      "title": "[WF-M12-VERIFY] Video/audio repurposing: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M12-BUILD",
+      "depends_on": [
+        "WF-M12-BUILD",
+        "WF-M12-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP033",
+        "CP059",
+        "CP060",
+        "CP077",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M12/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M12",
+      "body_path": "backlog/issues/WF-M12-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "6bc51387e03f041a1713da63b0eca747350ff83d9a6fd769622c1068291b5a86"
+    },
+    {
+      "key": "WF-M13-BUILD",
+      "title": "[WF-M13-BUILD] Newsletter subscriber onboarding: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M13/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M13",
+      "body_path": "backlog/issues/WF-M13-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "cd10c3931159843b312b71cff0a6e2049b23a869403c142480bd8658de68261b"
+    },
+    {
+      "key": "WF-M13-TEST",
+      "title": "[WF-M13-TEST] Newsletter subscriber onboarding: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M13-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M13/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M13",
+      "body_path": "backlog/issues/WF-M13-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "913164fc6a1263c67e298be6832a2946065cbcb94a56665d3b8ce09a03853581"
+    },
+    {
+      "key": "WF-M13-VERIFY",
+      "title": "[WF-M13-VERIFY] Newsletter subscriber onboarding: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M13-BUILD",
+      "depends_on": [
+        "WF-M13-BUILD",
+        "WF-M13-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP058",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY",
+        "WF-X04-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M13/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M13",
+      "body_path": "backlog/issues/WF-M13-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "da0eb7562d556c9c28f00c97886f8666502d07e3f1fc5c2bc81699baafa05f86"
+    },
+    {
+      "key": "WF-M14-BUILD",
+      "title": "[WF-M14-BUILD] Comment/DM engagement follow-up: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M14/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M14",
+      "body_path": "backlog/issues/WF-M14-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "babeb58d20ffbf9164ed2d7b7df22062144a4c882bf86daad00e9c3ab557ac9f"
+    },
+    {
+      "key": "WF-M14-TEST",
+      "title": "[WF-M14-TEST] Comment/DM engagement follow-up: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M14-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M14/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M14",
+      "body_path": "backlog/issues/WF-M14-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "5f0aafd647fee6a3e04aabe0954aa52f7f473d12ceaab94a442d4695a65768a1"
+    },
+    {
+      "key": "WF-M14-VERIFY",
+      "title": "[WF-M14-VERIFY] Comment/DM engagement follow-up: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M14-BUILD",
+      "depends_on": [
+        "WF-M14-BUILD",
+        "WF-M14-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP033",
+        "CP058",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY",
+        "WF-X04-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M14/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M14",
+      "body_path": "backlog/issues/WF-M14-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "08e8b21de8f20c80efbf6ffeacb56918cbaec61465f7d51a1cb835b4b63feeb4"
+    },
+    {
+      "key": "WF-M15-BUILD",
+      "title": "[WF-M15-BUILD] Social-to-site conversion reporting: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M15/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M15",
+      "body_path": "backlog/issues/WF-M15-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "b224ddf43206d3c47c719a594ef67e4d5d46f4fa5e12e2c7cd40da10df653cda"
+    },
+    {
+      "key": "WF-M15-TEST",
+      "title": "[WF-M15-TEST] Social-to-site conversion reporting: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M15-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M15/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M15",
+      "body_path": "backlog/issues/WF-M15-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "cfac5c29798a43dfc6c8cd0d7a12d4535ab0329c706395a0c13b0847a7832fdf"
+    },
+    {
+      "key": "WF-M15-VERIFY",
+      "title": "[WF-M15-VERIFY] Social-to-site conversion reporting: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M15-BUILD",
+      "depends_on": [
+        "WF-M15-BUILD",
+        "WF-M15-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP041",
+        "CP058",
+        "CP060",
+        "CP061",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M15/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M15",
+      "body_path": "backlog/issues/WF-M15-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "b92ac364d41a1a2f94ca0a4ce7338433b0cd80bccb00651702f2447e445b9f10"
+    },
+    {
+      "key": "WF-M16-BUILD",
+      "title": "[WF-M16-BUILD] Client onboarding: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M16/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M16",
+      "body_path": "backlog/issues/WF-M16-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "0561be42eecb6132446c5edfa94508dcdadb8305e279eb545eef4ae4f2830826"
+    },
+    {
+      "key": "WF-M16-TEST",
+      "title": "[WF-M16-TEST] Client onboarding: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M16-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M16/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M16",
+      "body_path": "backlog/issues/WF-M16-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "e79ffe51268e997ec7f511109e4977753ef94131e8ae5219cde73353c7e899f1"
+    },
+    {
+      "key": "WF-M16-VERIFY",
+      "title": "[WF-M16-VERIFY] Client onboarding: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M16-BUILD",
+      "depends_on": [
+        "WF-M16-BUILD",
+        "WF-M16-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP056",
+        "CP058",
+        "CP059",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M16/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M16",
+      "body_path": "backlog/issues/WF-M16-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "184c8c3abebfe7217563494a93eeec5573ab109a5b67390f63a3b68c5fce8dfd"
+    },
+    {
+      "key": "WF-M17-BUILD",
+      "title": "[WF-M17-BUILD] Multi-channel publishing: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M17/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M17",
+      "body_path": "backlog/issues/WF-M17-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "9aeaade0e526940ef2df761498662eddd47be3dcc46e1fa519c51db74ececdc9"
+    },
+    {
+      "key": "WF-M17-TEST",
+      "title": "[WF-M17-TEST] Multi-channel publishing: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M17-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M17/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M17",
+      "body_path": "backlog/issues/WF-M17-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "b19bb0826253f23a2e6fd59c1127bcf93a529e3a4f42029390b7dbedfad9106a"
+    },
+    {
+      "key": "WF-M17-VERIFY",
+      "title": "[WF-M17-VERIFY] Multi-channel publishing: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M17-BUILD",
+      "depends_on": [
+        "WF-M17-BUILD",
+        "WF-M17-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP033",
+        "CP035",
+        "CP056",
+        "CP057",
+        "CP058",
+        "CP059",
+        "CP060",
+        "CP076",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M17/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M17",
+      "body_path": "backlog/issues/WF-M17-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "14bf7ed480f0afd9834dc4f6d02b5c568edf444b38b123f54b1c028bf26b135e"
+    },
+    {
+      "key": "WF-M18-BUILD",
+      "title": "[WF-M18-BUILD] Client-facing campaign dashboards: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M18/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M18",
+      "body_path": "backlog/issues/WF-M18-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "680fdd0edfca4f7aa367a937b9612a07dc2bb5d15f4795d69be20f1b7a7f0f53"
+    },
+    {
+      "key": "WF-M18-TEST",
+      "title": "[WF-M18-TEST] Client-facing campaign dashboards: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M18-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M18/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M18",
+      "body_path": "backlog/issues/WF-M18-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "a17b357a0ef695558663393458d923765bc187244cbce577b9b587c6ce8c9f5d"
+    },
+    {
+      "key": "WF-M18-VERIFY",
+      "title": "[WF-M18-VERIFY] Client-facing campaign dashboards: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M18-BUILD",
+      "depends_on": [
+        "WF-M18-BUILD",
+        "WF-M18-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP041",
+        "CP055",
+        "CP058",
+        "CP060",
+        "CP061",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M18/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M18",
+      "body_path": "backlog/issues/WF-M18-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "aa866c24fb73e2490a36db4699ecec753f417c1d61b59986b77d15468719e845"
+    },
+    {
+      "key": "WF-M19-BUILD",
+      "title": "[WF-M19-BUILD] Lead generation and routing: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M19/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M19",
+      "body_path": "backlog/issues/WF-M19-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "8ea3efa58e2201408eca01ed7711bc617e6d6683434b255bf78f1b17950bbdcf"
+    },
+    {
+      "key": "WF-M19-TEST",
+      "title": "[WF-M19-TEST] Lead generation and routing: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M19-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M19/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M19",
+      "body_path": "backlog/issues/WF-M19-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "e3ae4432e63f0126f664c32487871df3474e1dde6a2e0fc0d9f1bf84573e356a"
+    },
+    {
+      "key": "WF-M19-VERIFY",
+      "title": "[WF-M19-VERIFY] Lead generation and routing: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M19-BUILD",
+      "depends_on": [
+        "WF-M19-BUILD",
+        "WF-M19-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP056",
+        "CP057",
+        "CP058",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY",
+        "WF-X04-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M19/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M19",
+      "body_path": "backlog/issues/WF-M19-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "de6d22e095b4ce36324eeafdca6f225494ac47518cc7aaf0c2e26d9a13bf7a93"
+    },
+    {
+      "key": "WF-M20-BUILD",
+      "title": "[WF-M20-BUILD] Automated client reports: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M20/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M20",
+      "body_path": "backlog/issues/WF-M20-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "a0bd52f4f9b99c94efac254df107437ab2b096cb0aa849fb271b6cc01b3d4b16"
+    },
+    {
+      "key": "WF-M20-TEST",
+      "title": "[WF-M20-TEST] Automated client reports: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M20-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M20/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M20",
+      "body_path": "backlog/issues/WF-M20-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "b1a82fa26c5b18335509d5095e16f72edc1a38e068d7f6ca561141d96f98b9dc"
+    },
+    {
+      "key": "WF-M20-VERIFY",
+      "title": "[WF-M20-VERIFY] Automated client reports: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M20-BUILD",
+      "depends_on": [
+        "WF-M20-BUILD",
+        "WF-M20-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP041",
+        "CP056",
+        "CP079",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M20/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M20",
+      "body_path": "backlog/issues/WF-M20-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "a6f03fa62496df8f6448ae297ea90c985e6e3029861d622499979db56baaa48b"
+    },
+    {
+      "key": "WF-M21-BUILD",
+      "title": "[WF-M21-BUILD] Keyword tracking and alerts: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M21/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M21",
+      "body_path": "backlog/issues/WF-M21-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "0e24ce7d84a13039118ade0263d74f9aa917ac7590873da35a2481bb8871edb1"
+    },
+    {
+      "key": "WF-M21-TEST",
+      "title": "[WF-M21-TEST] Keyword tracking and alerts: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M21-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M21/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M21",
+      "body_path": "backlog/issues/WF-M21-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "c8d1516abb49a2f22df046ffc3ed77b2fdd302a62f508877a88bd9b36a4d4da9"
+    },
+    {
+      "key": "WF-M21-VERIFY",
+      "title": "[WF-M21-VERIFY] Keyword tracking and alerts: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M21-BUILD",
+      "depends_on": [
+        "WF-M21-BUILD",
+        "WF-M21-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP055",
+        "CP056",
+        "CP057",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M21/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M21",
+      "body_path": "backlog/issues/WF-M21-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "e60a410838b00f7be6b5b315eade90a9564af1459ad1ad9a3854199eb2378d38"
+    },
+    {
+      "key": "WF-M22-BUILD",
+      "title": "[WF-M22-BUILD] Competitor change tracking: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M22/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M22",
+      "body_path": "backlog/issues/WF-M22-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "e201bbfbcde8d4e4c8746e5a031288e8da3bd25bee27d51420dddb8076aeb670"
+    },
+    {
+      "key": "WF-M22-TEST",
+      "title": "[WF-M22-TEST] Competitor change tracking: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M22-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M22/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M22",
+      "body_path": "backlog/issues/WF-M22-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "f92e9c89b94daf6a9ea989b3eddeb92faea51b846fbbc39035ffb2b7f98530dd"
+    },
+    {
+      "key": "WF-M22-VERIFY",
+      "title": "[WF-M22-VERIFY] Competitor change tracking: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M22-BUILD",
+      "depends_on": [
+        "WF-M22-BUILD",
+        "WF-M22-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP033",
+        "CP053",
+        "CP056",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M22/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M22",
+      "body_path": "backlog/issues/WF-M22-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "bc57b38b5e2fcc6cb3dca0c282832d02862d597c321f6d2e766bd6dc495f7ae3"
+    },
+    {
+      "key": "WF-M23-BUILD",
+      "title": "[WF-M23-BUILD] Email/site A/B tests: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M23/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M23",
+      "body_path": "backlog/issues/WF-M23-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "7ea29d99dc2cea77c05962ca1ed70db4ce86c99390799fee2c66cdb51d683ab8"
+    },
+    {
+      "key": "WF-M23-TEST",
+      "title": "[WF-M23-TEST] Email/site A/B tests: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M23-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M23/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M23",
+      "body_path": "backlog/issues/WF-M23-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "b67a91bbfee3b43b5ef7c0465d38157b003dccb3e23f01b477b30b44863164da"
+    },
+    {
+      "key": "WF-M23-VERIFY",
+      "title": "[WF-M23-VERIFY] Email/site A/B tests: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M23-BUILD",
+      "depends_on": [
+        "WF-M23-BUILD",
+        "WF-M23-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP056",
+        "CP057",
+        "CP058",
+        "CP061",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M23/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M23",
+      "body_path": "backlog/issues/WF-M23-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "5a12aa85611e095d5ae3ebd5b2a36d291c35c32c1a14cdbb3156608f16a5184a"
+    },
+    {
+      "key": "WF-M24-BUILD",
+      "title": "[WF-M24-BUILD] Landing page optimization: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M24/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M24",
+      "body_path": "backlog/issues/WF-M24-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "8bb0b06c6dcd35fe107616045ff9a2e1ccd955d391b745700e94c90e37a68178"
+    },
+    {
+      "key": "WF-M24-TEST",
+      "title": "[WF-M24-TEST] Landing page optimization: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M24-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M24/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M24",
+      "body_path": "backlog/issues/WF-M24-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "1dd222d1131d56a126cd86cbe9628870948704c883c02772fbdca7cae5c8b306"
+    },
+    {
+      "key": "WF-M24-VERIFY",
+      "title": "[WF-M24-VERIFY] Landing page optimization: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M24-BUILD",
+      "depends_on": [
+        "WF-M24-BUILD",
+        "WF-M24-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP053",
+        "CP056",
+        "CP057",
+        "CP061",
+        "CP081",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M24/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M24",
+      "body_path": "backlog/issues/WF-M24-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "0076fb0489bb4133ef93642b99f8e41a0ede6a64d0ad431afecdf6734f838d19"
+    },
+    {
+      "key": "WF-M25-BUILD",
+      "title": "[WF-M25-BUILD] Consent-aware audience segmentation: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M25/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M25",
+      "body_path": "backlog/issues/WF-M25-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "018075767c408ed6da4cfd6d8070a2feaec4edc97c46e7fde5bcd34b14172ab5"
+    },
+    {
+      "key": "WF-M25-TEST",
+      "title": "[WF-M25-TEST] Consent-aware audience segmentation: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M25-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M25/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M25",
+      "body_path": "backlog/issues/WF-M25-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "8233ef1ab8c9c9edd2307225bf97bcb3eb34530338fc56832f61a8d612d3e8fe"
+    },
+    {
+      "key": "WF-M25-VERIFY",
+      "title": "[WF-M25-VERIFY] Consent-aware audience segmentation: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M25-BUILD",
+      "depends_on": [
+        "WF-M25-BUILD",
+        "WF-M25-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP058",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY",
+        "WF-X04-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M25/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M25",
+      "body_path": "backlog/issues/WF-M25-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "f90f7e4c3f968d797f130a090e998157f2046ab060628cf9dfae01bf7ff32e69"
+    },
+    {
+      "key": "WF-M26-BUILD",
+      "title": "[WF-M26-BUILD] Referral marketing: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M26/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M26",
+      "body_path": "backlog/issues/WF-M26-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "15400ef31b15b5cdb7344d7e848b3b86c7cda878c7e52e11a2a402ac60089136"
+    },
+    {
+      "key": "WF-M26-TEST",
+      "title": "[WF-M26-TEST] Referral marketing: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M26-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M26/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M26",
+      "body_path": "backlog/issues/WF-M26-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "5ab5479e4f44e377839343f2df5f3998f306486fff2c25a27a3d37eeb386894e"
+    },
+    {
+      "key": "WF-M26-VERIFY",
+      "title": "[WF-M26-VERIFY] Referral marketing: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M26-BUILD",
+      "depends_on": [
+        "WF-M26-BUILD",
+        "WF-M26-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP057",
+        "CP058",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY",
+        "WF-X04-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M26/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M26",
+      "body_path": "backlog/issues/WF-M26-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "6b519cfc4df6c0f7d74a29f8bdea075823e66413d95b4ac2bb3137ca42a9156f"
+    },
+    {
+      "key": "WF-M27-BUILD",
+      "title": "[WF-M27-BUILD] Affiliate management: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M27/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M27",
+      "body_path": "backlog/issues/WF-M27-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "8f30679b058c84814459c7976f9447e2f3af7354ad93ce10c70d1ea72c9d6982"
+    },
+    {
+      "key": "WF-M27-TEST",
+      "title": "[WF-M27-TEST] Affiliate management: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M27-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M27/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M27",
+      "body_path": "backlog/issues/WF-M27-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "8f1e18061a745bc3483a1f0243e4e78ff7c9273e6c1cc7b51f4468dd19f47ba1"
+    },
+    {
+      "key": "WF-M27-VERIFY",
+      "title": "[WF-M27-VERIFY] Affiliate management: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M27-BUILD",
+      "depends_on": [
+        "WF-M27-BUILD",
+        "WF-M27-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M27/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M27",
+      "body_path": "backlog/issues/WF-M27-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "7e4d15d16d2c7200b76f8913f9365d74d1f36fc7919a7b46bb205d183cfb2cf9"
+    },
+    {
+      "key": "WF-M28-BUILD",
+      "title": "[WF-M28-BUILD] Influencer discovery and outreach: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M28/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M28",
+      "body_path": "backlog/issues/WF-M28-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "71f907e9621f26f8f9798a7f2524aa03de6b33cf89abdb52064706c4f9120b3d"
+    },
+    {
+      "key": "WF-M28-TEST",
+      "title": "[WF-M28-TEST] Influencer discovery and outreach: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M28-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M28/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M28",
+      "body_path": "backlog/issues/WF-M28-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "58cf0d3a61fe57fcc444911f6632667265bf31ea4c046d701a75cfb05ef31c0d"
+    },
+    {
+      "key": "WF-M28-VERIFY",
+      "title": "[WF-M28-VERIFY] Influencer discovery and outreach: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M28-BUILD",
+      "depends_on": [
+        "WF-M28-BUILD",
+        "WF-M28-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP033",
+        "CP056",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY",
+        "WF-X04-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M28/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M28",
+      "body_path": "backlog/issues/WF-M28-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "1fafa687097ea6cdbf0f5d81f0b96968901e716453906aa76b4d302303a1e804"
+    },
+    {
+      "key": "WF-M29-BUILD",
+      "title": "[WF-M29-BUILD] First-party review requests: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M29/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M29",
+      "body_path": "backlog/issues/WF-M29-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "492061a6cb963abe237bc470aba0826a19eba874bdf8163540562d20c89498bc"
+    },
+    {
+      "key": "WF-M29-TEST",
+      "title": "[WF-M29-TEST] First-party review requests: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M29-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M29/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M29",
+      "body_path": "backlog/issues/WF-M29-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "1b1b0e4fbb0cb3869a4e2dd5a59530cde18b5e53f6cfc908c6d58358bb36dc1c"
+    },
+    {
+      "key": "WF-M29-VERIFY",
+      "title": "[WF-M29-VERIFY] First-party review requests: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M29-BUILD",
+      "depends_on": [
+        "WF-M29-BUILD",
+        "WF-M29-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP057",
+        "CP058",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY",
+        "WF-X04-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M29/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M29",
+      "body_path": "backlog/issues/WF-M29-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "57e0fc86fbf7b13ed38f4a15a85ff18c699b18c6e727b7936d9ea433c0192035"
+    },
+    {
+      "key": "WF-M30-BUILD",
+      "title": "[WF-M30-BUILD] Reputation and brand monitoring: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M30/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M30",
+      "body_path": "backlog/issues/WF-M30-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "c88b4e1c9011b1c51bde689eaa9248f4d2992fe9e737f7cca052b4ee9b6a0d9a"
+    },
+    {
+      "key": "WF-M30-TEST",
+      "title": "[WF-M30-TEST] Reputation and brand monitoring: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M30-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M30/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M30",
+      "body_path": "backlog/issues/WF-M30-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "64fcd6c381d5a9ac79181b3a587349879583dc0bcfafe8945bed90289fb0193d"
+    },
+    {
+      "key": "WF-M30-VERIFY",
+      "title": "[WF-M30-VERIFY] Reputation and brand monitoring: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M30-BUILD",
+      "depends_on": [
+        "WF-M30-BUILD",
+        "WF-M30-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP033",
+        "CP053",
+        "CP056",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M30/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M30",
+      "body_path": "backlog/issues/WF-M30-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "8db64b88c1adcf71219b18a43787d2c0b4f6e98b6b83bdfdf165f369066a7506"
+    },
+    {
+      "key": "WF-M31-BUILD",
+      "title": "[WF-M31-BUILD] Webinar registration and follow-up: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M31/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M31",
+      "body_path": "backlog/issues/WF-M31-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "2ee01e86294f967eddca6f1bd60f14b1303e19d1810785005a0e601b0ca53fb8"
+    },
+    {
+      "key": "WF-M31-TEST",
+      "title": "[WF-M31-TEST] Webinar registration and follow-up: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M31-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M31/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M31",
+      "body_path": "backlog/issues/WF-M31-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "250187ce4e7796cc90657ba10f710ad1126475f77815931ce99412b4e9495c41"
+    },
+    {
+      "key": "WF-M31-VERIFY",
+      "title": "[WF-M31-VERIFY] Webinar registration and follow-up: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M31-BUILD",
+      "depends_on": [
+        "WF-M31-BUILD",
+        "WF-M31-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP057",
+        "CP058",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY",
+        "WF-X04-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M31/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M31",
+      "body_path": "backlog/issues/WF-M31-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "e1f42901e6a17b7b9fb5a7cf65fc7899ebec19bfb89e8398983b4466b500d592"
+    },
+    {
+      "key": "WF-M32-BUILD",
+      "title": "[WF-M32-BUILD] Permission-based SMS marketing: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M32/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M32",
+      "body_path": "backlog/issues/WF-M32-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "4d584aef8974e7a740566264803bf76b6d749debb4e41f01be76bbfe141548fa"
+    },
+    {
+      "key": "WF-M32-TEST",
+      "title": "[WF-M32-TEST] Permission-based SMS marketing: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M32-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M32/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M32",
+      "body_path": "backlog/issues/WF-M32-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "295bcb4772034bfb38b7afb735afe479a754937e515e062178cc0f361846a167"
+    },
+    {
+      "key": "WF-M32-VERIFY",
+      "title": "[WF-M32-VERIFY] Permission-based SMS marketing: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M32-BUILD",
+      "depends_on": [
+        "WF-M32-BUILD",
+        "WF-M32-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP058",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY",
+        "WF-X04-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M32/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M32",
+      "body_path": "backlog/issues/WF-M32-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "a23db42e24be415c9c33a292a121e7c57eba9349b6318e6d2a3b2ee14b63ebb5"
+    },
+    {
+      "key": "WF-M33-BUILD",
+      "title": "[WF-M33-BUILD] Local SEO and listings: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M33/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M33",
+      "body_path": "backlog/issues/WF-M33-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "880a234c4b018464bfb82e703649b620cae9a3bf33ffe2acefb1ba78ea1704f4"
+    },
+    {
+      "key": "WF-M33-TEST",
+      "title": "[WF-M33-TEST] Local SEO and listings: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M33-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M33/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M33",
+      "body_path": "backlog/issues/WF-M33-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "2354232b01cd684e23876120823cbbde9c9574ede839365974abb646b95f988b"
+    },
+    {
+      "key": "WF-M33-VERIFY",
+      "title": "[WF-M33-VERIFY] Local SEO and listings: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M33-BUILD",
+      "depends_on": [
+        "WF-M33-BUILD",
+        "WF-M33-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP055",
+        "CP057",
+        "CP061",
+        "CP081",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M33/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M33",
+      "body_path": "backlog/issues/WF-M33-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "5cafe5024a4c92f3426af75b01c26175f9b10f5c44203b8a94971fd102c81e81"
+    },
+    {
+      "key": "WF-M34-BUILD",
+      "title": "[WF-M34-BUILD] Loyalty and reward programs: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M34/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M34",
+      "body_path": "backlog/issues/WF-M34-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "a8e02a0c2d83b041bca509c5e0a389fcdc4b91d98d5db18b4d8a7636bd770da8"
+    },
+    {
+      "key": "WF-M34-TEST",
+      "title": "[WF-M34-TEST] Loyalty and reward programs: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M34-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M34/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M34",
+      "body_path": "backlog/issues/WF-M34-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "933faf7e1d2622466fb65acd48516295636643b13536f7d2474e6f415359e3d5"
+    },
+    {
+      "key": "WF-M34-VERIFY",
+      "title": "[WF-M34-VERIFY] Loyalty and reward programs: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M34-BUILD",
+      "depends_on": [
+        "WF-M34-BUILD",
+        "WF-M34-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP058",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY",
+        "WF-X04-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M34/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M34",
+      "body_path": "backlog/issues/WF-M34-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "3fbac106cea37f131e2f90f847b8f49e37ec116a2b4908c4b7a6e30edd72c12c"
+    },
+    {
+      "key": "WF-M35-BUILD",
+      "title": "[WF-M35-BUILD] Marketing budget optimization: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M35/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M35",
+      "body_path": "backlog/issues/WF-M35-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "aa503e048dc27f0b9b5918eff0974396d8951bdd7dc3812b2183d6d2541ea69a"
+    },
+    {
+      "key": "WF-M35-TEST",
+      "title": "[WF-M35-TEST] Marketing budget optimization: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M35-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M35/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M35",
+      "body_path": "backlog/issues/WF-M35-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "f13cd6ea950f2a2e7c07c70077548f8d9d00fb6ff86da62c3b8adda233724f6b"
+    },
+    {
+      "key": "WF-M35-VERIFY",
+      "title": "[WF-M35-VERIFY] Marketing budget optimization: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M35-BUILD",
+      "depends_on": [
+        "WF-M35-BUILD",
+        "WF-M35-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "CP041",
+        "CP056",
+        "CP061",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M35/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M35",
+      "body_path": "backlog/issues/WF-M35-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "172fa4c3dca5ad113df7feaed9c8487e026936ed2fcb84914c39a32dad1f664e"
+    },
+    {
+      "key": "WF-M36-BUILD",
+      "title": "[WF-M36-BUILD] Marketing synchronization: implement",
+      "kind": "implementation",
+      "area": "Online marketing",
+      "phase": "P3",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "EP-WF-M",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "WF-X02-BUILD",
+        "WF-X03-BUILD",
+        "WF-X04-BUILD",
+        "WF-X06-BUILD"
+      ],
+      "write_paths": [
+        "flows/M36/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M36",
+      "body_path": "backlog/issues/WF-M36-BUILD.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "d390cdbfb3708d84e0a9e420ce32a2c61483ff7b495ef6b0cbbfd87143fd42f4"
+    },
+    {
+      "key": "WF-M36-TEST",
+      "title": "[WF-M36-TEST] Marketing synchronization: author independent acceptance tests",
+      "kind": "test-authoring",
+      "area": "Online marketing",
+      "phase": "P2",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M36-BUILD",
+      "depends_on": [
+        "F04",
+        "F05",
+        "F07"
+      ],
+      "write_paths": [
+        "tests/workflows/M36/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 1,
+        "memory_mib": 1536,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 0
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M36",
+      "body_path": "backlog/issues/WF-M36-TEST.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "body_sha256": "f73f6cf65e24b0b8b993ef0b7a015c9419cca9dd14e892f3d0c72df92164d8d3"
+    },
+    {
+      "key": "WF-M36-VERIFY",
+      "title": "[WF-M36-VERIFY] Marketing synchronization: qualify integrated behavior",
+      "kind": "verification",
+      "area": "Online marketing",
+      "phase": "P4",
+      "priority": "P1",
+      "risk": "medium",
+      "parent_key": "WF-M36-BUILD",
+      "depends_on": [
+        "WF-M36-BUILD",
+        "WF-M36-TEST",
+        "F18",
+        "CP027",
+        "CP032",
+        "WF-X01-VERIFY",
+        "WF-X02-VERIFY",
+        "WF-X03-VERIFY",
+        "WF-X06-VERIFY",
+        "WF-X10-VERIFY"
+      ],
+      "write_paths": [
+        "evidence/workflows/M36/"
+      ],
+      "locks": [],
+      "resources": {
+        "cpu": 2,
+        "memory_mib": 3072,
+        "gpu": 0,
+        "slots": 1,
+        "integration": 1
+      },
+      "manual": false,
+      "enabled_by_default": true,
+      "workflow_id": "M36",
+      "body_path": "backlog/issues/WF-M36-VERIFY.md",
+      "completion_authority": "independent reviewer + trusted integration controller",
+      "production_authorized": false,
+      "initial_state": "BACKLOG",
+      "requires_independent_agent": true,
+      "evidence_level": "SANDBOX_QUALIFIED_ONLY",
+      "body_sha256": "c96aa392c66a326ec46d0277d746f00d08b6911ffd7778e50e8663109bfe05be"
+    }
+  ],
+  "source_files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "4b35d08d52b09ebbf00781356cdcde7cbfeceb7acb9dd5bc8510155b84b8cb15"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "sha256": "45a1d4bc03f14caa07fc3ca86c08423c0cb684727d01ac05b9f51c38d6cfd978"
+    },
+    {
+      "path": ".github/dependabot.yml",
+      "sha256": "5e54c7e473646e7b15345ac8dc7749922495be1cac57135cdf3cde5e4d20911f"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "270b1ebeb4281f77c6729353222f9a5438005a98611702575afa4bb132b5fa33"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "13ce4806ef5c61791e394b2bcd6a6a835acb010a2004efcdd995aa336798aba4"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "4330cfd69ac53ebe0355d47f6749d645b94a16dd231be36c86868717af1e9741"
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "1f4fc82f34ff5e742660dc86276e98d783c9aca7bd64d568f8a0fafd4942b869"
+    },
+    {
+      "path": "backlog/issues/CP054.md",
+      "sha256": "78212c76de7ae7836119f7d3fac0a5b5c771aef13dbfaa31a66380f2605bce6f"
+    },
+    {
+      "path": "backlog/issues/CP055.md",
+      "sha256": "aea73ab532b25ad66b6efeaeb0e1385ff67f51e62f9b029aa77754d304d7ae23"
+    },
+    {
+      "path": "backlog/issues/CP061.md",
+      "sha256": "f87837b5757f2dcda61e331a83b19ddd8cbedafa7467c378d13ba2f7219b7e36"
+    },
+    {
+      "path": "backlog/issues/CP139.md",
+      "sha256": "cd9f277de1483fab7c6b03716683f086e219bfb63d089ec16a19d6fa9dc06884"
+    },
+    {
+      "path": "backlog/issues/CP140.md",
+      "sha256": "acf6390e2909ff3cca99db5e2bac98b10d6e7a18f08aed6878288c19052dbaca"
+    },
+    {
+      "path": "backlog/issues/CP141.md",
+      "sha256": "1dd38ec7eb96e6fb540cd9f42820c9a86a94a3edde06c577f7797032bfdbf5c6"
+    },
+    {
+      "path": "backlog/issues/CP142.md",
+      "sha256": "99edd0e3099d49ecb4fd63b7b325b142557feb70f4be6333c7bf3037bb1316b4"
+    },
+    {
+      "path": "backlog/issues/CP143.md",
+      "sha256": "938d8e6e8498761a81636a77fb6c3147dd26fe4a157b0b47c5fef980f7aa8482"
+    },
+    {
+      "path": "backlog/issues/CP144.md",
+      "sha256": "419b5ee0809d4e52d273c5614a40ccae430ac31362c2e414628dd33ecd682b9c"
+    },
+    {
+      "path": "backlog/issues/CP145.md",
+      "sha256": "3a0aa91d63afde80e543454d172435fcdba393db3be621b031021a5595568b72"
+    },
+    {
+      "path": "backlog/issues/WF-M01-BUILD.md",
+      "sha256": "e73444712672450bd5deea049baa823afdcc8fb9ef03f037a501aa828450bf8c"
+    },
+    {
+      "path": "backlog/issues/WF-M01-TEST.md",
+      "sha256": "ef5a93dcb33f9e64a40206e0648e6e75d66cf102910b86a6f0fc983c31ab9934"
+    },
+    {
+      "path": "backlog/issues/WF-M01-VERIFY.md",
+      "sha256": "a2dc5dc79b2dbb0d7d5cd8797d004f7cdeddbd905bd3d8f11eee65d1c59bfecb"
+    },
+    {
+      "path": "backlog/issues/WF-M02-BUILD.md",
+      "sha256": "316534306cd3ec5a91a457940d2fbff458c0b1703284d1d4ebe6378e312dda03"
+    },
+    {
+      "path": "backlog/issues/WF-M02-TEST.md",
+      "sha256": "dc5ad29e49b164fbe860ed3d3a03691164db8e7aacc04edb223a9dac87e8ff41"
+    },
+    {
+      "path": "backlog/issues/WF-M02-VERIFY.md",
+      "sha256": "78d8ee9da101709c671ac334e04eb30107f2a068a69f0fcd9c9f498edd4b5862"
+    },
+    {
+      "path": "backlog/issues/WF-M03-BUILD.md",
+      "sha256": "17b1a887308939cf388cc1bc1ec17f691b6103f83b00b60224c439deb5b95817"
+    },
+    {
+      "path": "backlog/issues/WF-M03-TEST.md",
+      "sha256": "62f0fb1bee3e37464e3246ea596e1083282edc031b9725d45a24d2fa213a18c2"
+    },
+    {
+      "path": "backlog/issues/WF-M03-VERIFY.md",
+      "sha256": "0f07d0f8d693838e63f9f37c5a2414e5ceb43069e1c11b680a77ba5ee96b531f"
+    },
+    {
+      "path": "backlog/issues/WF-M04-BUILD.md",
+      "sha256": "5db7d5b3fd7c182f7ea4d58cf5a9a831c2d820825aee26df2bdddc96518b3b11"
+    },
+    {
+      "path": "backlog/issues/WF-M04-TEST.md",
+      "sha256": "8dce361c0d274271e49f8bdee97cdfbce0dfb504233e30acc175b5f82f880bef"
+    },
+    {
+      "path": "backlog/issues/WF-M04-VERIFY.md",
+      "sha256": "d4f2aabe67eeaa8354d27a5c1cf1697b1d0ff8a6c91eaf8e7934d22b9d611dad"
+    },
+    {
+      "path": "backlog/issues/WF-M05-BUILD.md",
+      "sha256": "970374595db9453dc60cfc1df25e5bd8408ae47fc05b11d116ff8bbd07cb4419"
+    },
+    {
+      "path": "backlog/issues/WF-M05-TEST.md",
+      "sha256": "335d6a1fd727e7ad0caca3e5f8cd59c3189fa5cba9a6aa60dea8cd0689222bdb"
+    },
+    {
+      "path": "backlog/issues/WF-M05-VERIFY.md",
+      "sha256": "eb723dc6f732d71300805537b631028607b27018a87fe35adb2a4ff330a85669"
+    },
+    {
+      "path": "backlog/issues/WF-M06-BUILD.md",
+      "sha256": "72eff0e78ae25926ba7eff5fa807f44b958f9003fd46f20f7c7df0f40bceac1e"
+    },
+    {
+      "path": "backlog/issues/WF-M06-TEST.md",
+      "sha256": "5156c2684da9be59e949d57cbb65a7e857ac60155a1a8a00d89d51420bb79188"
+    },
+    {
+      "path": "backlog/issues/WF-M06-VERIFY.md",
+      "sha256": "a120adb7a0c7dcb13103c767d040e6e462c004586e73033662756717886977d9"
+    },
+    {
+      "path": "backlog/issues/WF-M07-BUILD.md",
+      "sha256": "10625fe6459dc987c7beedaf492a1f8923e1c260491da3be922b26cbfc77c404"
+    },
+    {
+      "path": "backlog/issues/WF-M07-TEST.md",
+      "sha256": "2bfa655dc0ec4e7de4605ea771649d4d2289dcc8a82a06cc4560014470fa5258"
+    },
+    {
+      "path": "backlog/issues/WF-M07-VERIFY.md",
+      "sha256": "3b154cd4848d73293a828c6d647016cc62f842d8f8cf368a7fde22300a6396e8"
+    },
+    {
+      "path": "backlog/issues/WF-M08-BUILD.md",
+      "sha256": "8f846a4e2782670aa1514874a9ccb1d02d38d06af00444c683ef892f7ca8dc1b"
+    },
+    {
+      "path": "backlog/issues/WF-M08-TEST.md",
+      "sha256": "635c554ae4f6fb06e0b5f0419fa0b1b8187bebeeb72430430ca56e0008d9dd4e"
+    },
+    {
+      "path": "backlog/issues/WF-M08-VERIFY.md",
+      "sha256": "52becb43e7703df9bd3549e5c13ca49fd373062d637a8d04ce0f6e34055f1d9c"
+    },
+    {
+      "path": "backlog/issues/WF-M09-BUILD.md",
+      "sha256": "7bcd9ce3c5c8830a2e7c442b0a37b00d43fc8ce847d3bfdb8725b859b78ae18a"
+    },
+    {
+      "path": "backlog/issues/WF-M09-TEST.md",
+      "sha256": "359742e05c09f4a94fb3f4c1662c8871a575fa40ef50321e586e54422e6ff847"
+    },
+    {
+      "path": "backlog/issues/WF-M09-VERIFY.md",
+      "sha256": "0220e2744c8a9b3227f598c6dd88b9120bbd20b614320af5c39042fb11ebf8b9"
+    },
+    {
+      "path": "backlog/issues/WF-M10-BUILD.md",
+      "sha256": "5cbad00261f7feeba86fda568b76b7777fe5aa07f4cae4fd56737b10434b5074"
+    },
+    {
+      "path": "backlog/issues/WF-M10-TEST.md",
+      "sha256": "de231f4496f18e80d2deaa637a6fba15108e894c3e7742dc36ee876ad651830a"
+    },
+    {
+      "path": "backlog/issues/WF-M10-VERIFY.md",
+      "sha256": "6a5b523b76f60a06ea4b21fa140e5aa48b8af6c4bbda843513c539fe04fc00c1"
+    },
+    {
+      "path": "backlog/issues/WF-M11-BUILD.md",
+      "sha256": "0d6ea130e665d2997bb8c9ed6bbfcf6ccee00f67a7b492d2e31aff72915d32e9"
+    },
+    {
+      "path": "backlog/issues/WF-M11-TEST.md",
+      "sha256": "01685b50e2f89ed2749cd2571dccf4e414f32663765ce75c39b81e0c17cc31f5"
+    },
+    {
+      "path": "backlog/issues/WF-M11-VERIFY.md",
+      "sha256": "9879c2f215be2280371d8de9659d5ab89020dec6abc68dc353fb5d2d433a3718"
+    },
+    {
+      "path": "backlog/issues/WF-M12-BUILD.md",
+      "sha256": "79328a2d808ca2106d7e1b12f15476e0ba9fbe19727a2f534e9c5b6e006d8ff1"
+    },
+    {
+      "path": "backlog/issues/WF-M12-TEST.md",
+      "sha256": "aa806ea567b316a0bc184d93987fe865323a0b14056f0e39292c6fe31fa482b4"
+    },
+    {
+      "path": "backlog/issues/WF-M12-VERIFY.md",
+      "sha256": "6bc51387e03f041a1713da63b0eca747350ff83d9a6fd769622c1068291b5a86"
+    },
+    {
+      "path": "backlog/issues/WF-M13-BUILD.md",
+      "sha256": "cd10c3931159843b312b71cff0a6e2049b23a869403c142480bd8658de68261b"
+    },
+    {
+      "path": "backlog/issues/WF-M13-TEST.md",
+      "sha256": "913164fc6a1263c67e298be6832a2946065cbcb94a56665d3b8ce09a03853581"
+    },
+    {
+      "path": "backlog/issues/WF-M13-VERIFY.md",
+      "sha256": "da0eb7562d556c9c28f00c97886f8666502d07e3f1fc5c2bc81699baafa05f86"
+    },
+    {
+      "path": "backlog/issues/WF-M14-BUILD.md",
+      "sha256": "babeb58d20ffbf9164ed2d7b7df22062144a4c882bf86daad00e9c3ab557ac9f"
+    },
+    {
+      "path": "backlog/issues/WF-M14-TEST.md",
+      "sha256": "5f0aafd647fee6a3e04aabe0954aa52f7f473d12ceaab94a442d4695a65768a1"
+    },
+    {
+      "path": "backlog/issues/WF-M14-VERIFY.md",
+      "sha256": "08e8b21de8f20c80efbf6ffeacb56918cbaec61465f7d51a1cb835b4b63feeb4"
+    },
+    {
+      "path": "backlog/issues/WF-M15-BUILD.md",
+      "sha256": "b224ddf43206d3c47c719a594ef67e4d5d46f4fa5e12e2c7cd40da10df653cda"
+    },
+    {
+      "path": "backlog/issues/WF-M15-TEST.md",
+      "sha256": "cfac5c29798a43dfc6c8cd0d7a12d4535ab0329c706395a0c13b0847a7832fdf"
+    },
+    {
+      "path": "backlog/issues/WF-M15-VERIFY.md",
+      "sha256": "b92ac364d41a1a2f94ca0a4ce7338433b0cd80bccb00651702f2447e445b9f10"
+    },
+    {
+      "path": "backlog/issues/WF-M16-BUILD.md",
+      "sha256": "0561be42eecb6132446c5edfa94508dcdadb8305e279eb545eef4ae4f2830826"
+    },
+    {
+      "path": "backlog/issues/WF-M16-TEST.md",
+      "sha256": "e79ffe51268e997ec7f511109e4977753ef94131e8ae5219cde73353c7e899f1"
+    },
+    {
+      "path": "backlog/issues/WF-M16-VERIFY.md",
+      "sha256": "184c8c3abebfe7217563494a93eeec5573ab109a5b67390f63a3b68c5fce8dfd"
+    },
+    {
+      "path": "backlog/issues/WF-M17-BUILD.md",
+      "sha256": "9aeaade0e526940ef2df761498662eddd47be3dcc46e1fa519c51db74ececdc9"
+    },
+    {
+      "path": "backlog/issues/WF-M17-TEST.md",
+      "sha256": "b19bb0826253f23a2e6fd59c1127bcf93a529e3a4f42029390b7dbedfad9106a"
+    },
+    {
+      "path": "backlog/issues/WF-M17-VERIFY.md",
+      "sha256": "14bf7ed480f0afd9834dc4f6d02b5c568edf444b38b123f54b1c028bf26b135e"
+    },
+    {
+      "path": "backlog/issues/WF-M18-BUILD.md",
+      "sha256": "680fdd0edfca4f7aa367a937b9612a07dc2bb5d15f4795d69be20f1b7a7f0f53"
+    },
+    {
+      "path": "backlog/issues/WF-M18-TEST.md",
+      "sha256": "a17b357a0ef695558663393458d923765bc187244cbce577b9b587c6ce8c9f5d"
+    },
+    {
+      "path": "backlog/issues/WF-M18-VERIFY.md",
+      "sha256": "aa866c24fb73e2490a36db4699ecec753f417c1d61b59986b77d15468719e845"
+    },
+    {
+      "path": "backlog/issues/WF-M19-BUILD.md",
+      "sha256": "8ea3efa58e2201408eca01ed7711bc617e6d6683434b255bf78f1b17950bbdcf"
+    },
+    {
+      "path": "backlog/issues/WF-M19-TEST.md",
+      "sha256": "e3ae4432e63f0126f664c32487871df3474e1dde6a2e0fc0d9f1bf84573e356a"
+    },
+    {
+      "path": "backlog/issues/WF-M19-VERIFY.md",
+      "sha256": "de6d22e095b4ce36324eeafdca6f225494ac47518cc7aaf0c2e26d9a13bf7a93"
+    },
+    {
+      "path": "backlog/issues/WF-M20-BUILD.md",
+      "sha256": "a0bd52f4f9b99c94efac254df107437ab2b096cb0aa849fb271b6cc01b3d4b16"
+    },
+    {
+      "path": "backlog/issues/WF-M20-TEST.md",
+      "sha256": "b1a82fa26c5b18335509d5095e16f72edc1a38e068d7f6ca561141d96f98b9dc"
+    },
+    {
+      "path": "backlog/issues/WF-M20-VERIFY.md",
+      "sha256": "a6f03fa62496df8f6448ae297ea90c985e6e3029861d622499979db56baaa48b"
+    },
+    {
+      "path": "backlog/issues/WF-M21-BUILD.md",
+      "sha256": "0e24ce7d84a13039118ade0263d74f9aa917ac7590873da35a2481bb8871edb1"
+    },
+    {
+      "path": "backlog/issues/WF-M21-TEST.md",
+      "sha256": "c8d1516abb49a2f22df046ffc3ed77b2fdd302a62f508877a88bd9b36a4d4da9"
+    },
+    {
+      "path": "backlog/issues/WF-M21-VERIFY.md",
+      "sha256": "e60a410838b00f7be6b5b315eade90a9564af1459ad1ad9a3854199eb2378d38"
+    },
+    {
+      "path": "backlog/issues/WF-M22-BUILD.md",
+      "sha256": "e201bbfbcde8d4e4c8746e5a031288e8da3bd25bee27d51420dddb8076aeb670"
+    },
+    {
+      "path": "backlog/issues/WF-M22-TEST.md",
+      "sha256": "f92e9c89b94daf6a9ea989b3eddeb92faea51b846fbbc39035ffb2b7f98530dd"
+    },
+    {
+      "path": "backlog/issues/WF-M22-VERIFY.md",
+      "sha256": "bc57b38b5e2fcc6cb3dca0c282832d02862d597c321f6d2e766bd6dc495f7ae3"
+    },
+    {
+      "path": "backlog/issues/WF-M23-BUILD.md",
+      "sha256": "7ea29d99dc2cea77c05962ca1ed70db4ce86c99390799fee2c66cdb51d683ab8"
+    },
+    {
+      "path": "backlog/issues/WF-M23-TEST.md",
+      "sha256": "b67a91bbfee3b43b5ef7c0465d38157b003dccb3e23f01b477b30b44863164da"
+    },
+    {
+      "path": "backlog/issues/WF-M23-VERIFY.md",
+      "sha256": "5a12aa85611e095d5ae3ebd5b2a36d291c35c32c1a14cdbb3156608f16a5184a"
+    },
+    {
+      "path": "backlog/issues/WF-M24-BUILD.md",
+      "sha256": "8bb0b06c6dcd35fe107616045ff9a2e1ccd955d391b745700e94c90e37a68178"
+    },
+    {
+      "path": "backlog/issues/WF-M24-TEST.md",
+      "sha256": "1dd222d1131d56a126cd86cbe9628870948704c883c02772fbdca7cae5c8b306"
+    },
+    {
+      "path": "backlog/issues/WF-M24-VERIFY.md",
+      "sha256": "0076fb0489bb4133ef93642b99f8e41a0ede6a64d0ad431afecdf6734f838d19"
+    },
+    {
+      "path": "backlog/issues/WF-M25-BUILD.md",
+      "sha256": "018075767c408ed6da4cfd6d8070a2feaec4edc97c46e7fde5bcd34b14172ab5"
+    },
+    {
+      "path": "backlog/issues/WF-M25-TEST.md",
+      "sha256": "8233ef1ab8c9c9edd2307225bf97bcb3eb34530338fc56832f61a8d612d3e8fe"
+    },
+    {
+      "path": "backlog/issues/WF-M25-VERIFY.md",
+      "sha256": "f90f7e4c3f968d797f130a090e998157f2046ab060628cf9dfae01bf7ff32e69"
+    },
+    {
+      "path": "backlog/issues/WF-M26-BUILD.md",
+      "sha256": "15400ef31b15b5cdb7344d7e848b3b86c7cda878c7e52e11a2a402ac60089136"
+    },
+    {
+      "path": "backlog/issues/WF-M26-TEST.md",
+      "sha256": "5ab5479e4f44e377839343f2df5f3998f306486fff2c25a27a3d37eeb386894e"
+    },
+    {
+      "path": "backlog/issues/WF-M26-VERIFY.md",
+      "sha256": "6b519cfc4df6c0f7d74a29f8bdea075823e66413d95b4ac2bb3137ca42a9156f"
+    },
+    {
+      "path": "backlog/issues/WF-M27-BUILD.md",
+      "sha256": "8f30679b058c84814459c7976f9447e2f3af7354ad93ce10c70d1ea72c9d6982"
+    },
+    {
+      "path": "backlog/issues/WF-M27-TEST.md",
+      "sha256": "8f1e18061a745bc3483a1f0243e4e78ff7c9273e6c1cc7b51f4468dd19f47ba1"
+    },
+    {
+      "path": "backlog/issues/WF-M27-VERIFY.md",
+      "sha256": "7e4d15d16d2c7200b76f8913f9365d74d1f36fc7919a7b46bb205d183cfb2cf9"
+    },
+    {
+      "path": "backlog/issues/WF-M28-BUILD.md",
+      "sha256": "71f907e9621f26f8f9798a7f2524aa03de6b33cf89abdb52064706c4f9120b3d"
+    },
+    {
+      "path": "backlog/issues/WF-M28-TEST.md",
+      "sha256": "58cf0d3a61fe57fcc444911f6632667265bf31ea4c046d701a75cfb05ef31c0d"
+    },
+    {
+      "path": "backlog/issues/WF-M28-VERIFY.md",
+      "sha256": "1fafa687097ea6cdbf0f5d81f0b96968901e716453906aa76b4d302303a1e804"
+    },
+    {
+      "path": "backlog/issues/WF-M29-BUILD.md",
+      "sha256": "492061a6cb963abe237bc470aba0826a19eba874bdf8163540562d20c89498bc"
+    },
+    {
+      "path": "backlog/issues/WF-M29-TEST.md",
+      "sha256": "1b1b0e4fbb0cb3869a4e2dd5a59530cde18b5e53f6cfc908c6d58358bb36dc1c"
+    },
+    {
+      "path": "backlog/issues/WF-M29-VERIFY.md",
+      "sha256": "57e0fc86fbf7b13ed38f4a15a85ff18c699b18c6e727b7936d9ea433c0192035"
+    },
+    {
+      "path": "backlog/issues/WF-M30-BUILD.md",
+      "sha256": "c88b4e1c9011b1c51bde689eaa9248f4d2992fe9e737f7cca052b4ee9b6a0d9a"
+    },
+    {
+      "path": "backlog/issues/WF-M30-TEST.md",
+      "sha256": "64fcd6c381d5a9ac79181b3a587349879583dc0bcfafe8945bed90289fb0193d"
+    },
+    {
+      "path": "backlog/issues/WF-M30-VERIFY.md",
+      "sha256": "8db64b88c1adcf71219b18a43787d2c0b4f6e98b6b83bdfdf165f369066a7506"
+    },
+    {
+      "path": "backlog/issues/WF-M31-BUILD.md",
+      "sha256": "2ee01e86294f967eddca6f1bd60f14b1303e19d1810785005a0e601b0ca53fb8"
+    },
+    {
+      "path": "backlog/issues/WF-M31-TEST.md",
+      "sha256": "250187ce4e7796cc90657ba10f710ad1126475f77815931ce99412b4e9495c41"
+    },
+    {
+      "path": "backlog/issues/WF-M31-VERIFY.md",
+      "sha256": "e1f42901e6a17b7b9fb5a7cf65fc7899ebec19bfb89e8398983b4466b500d592"
+    },
+    {
+      "path": "backlog/issues/WF-M32-BUILD.md",
+      "sha256": "4d584aef8974e7a740566264803bf76b6d749debb4e41f01be76bbfe141548fa"
+    },
+    {
+      "path": "backlog/issues/WF-M32-TEST.md",
+      "sha256": "295bcb4772034bfb38b7afb735afe479a754937e515e062178cc0f361846a167"
+    },
+    {
+      "path": "backlog/issues/WF-M32-VERIFY.md",
+      "sha256": "a23db42e24be415c9c33a292a121e7c57eba9349b6318e6d2a3b2ee14b63ebb5"
+    },
+    {
+      "path": "backlog/issues/WF-M33-BUILD.md",
+      "sha256": "880a234c4b018464bfb82e703649b620cae9a3bf33ffe2acefb1ba78ea1704f4"
+    },
+    {
+      "path": "backlog/issues/WF-M33-TEST.md",
+      "sha256": "2354232b01cd684e23876120823cbbde9c9574ede839365974abb646b95f988b"
+    },
+    {
+      "path": "backlog/issues/WF-M33-VERIFY.md",
+      "sha256": "5cafe5024a4c92f3426af75b01c26175f9b10f5c44203b8a94971fd102c81e81"
+    },
+    {
+      "path": "backlog/issues/WF-M34-BUILD.md",
+      "sha256": "a8e02a0c2d83b041bca509c5e0a389fcdc4b91d98d5db18b4d8a7636bd770da8"
+    },
+    {
+      "path": "backlog/issues/WF-M34-TEST.md",
+      "sha256": "933faf7e1d2622466fb65acd48516295636643b13536f7d2474e6f415359e3d5"
+    },
+    {
+      "path": "backlog/issues/WF-M34-VERIFY.md",
+      "sha256": "3fbac106cea37f131e2f90f847b8f49e37ec116a2b4908c4b7a6e30edd72c12c"
+    },
+    {
+      "path": "backlog/issues/WF-M35-BUILD.md",
+      "sha256": "aa503e048dc27f0b9b5918eff0974396d8951bdd7dc3812b2183d6d2541ea69a"
+    },
+    {
+      "path": "backlog/issues/WF-M35-TEST.md",
+      "sha256": "f13cd6ea950f2a2e7c07c70077548f8d9d00fb6ff86da62c3b8adda233724f6b"
+    },
+    {
+      "path": "backlog/issues/WF-M35-VERIFY.md",
+      "sha256": "172fa4c3dca5ad113df7feaed9c8487e026936ed2fcb84914c39a32dad1f664e"
+    },
+    {
+      "path": "backlog/issues/WF-M36-BUILD.md",
+      "sha256": "d390cdbfb3708d84e0a9e420ce32a2c61483ff7b495ef6b0cbbfd87143fd42f4"
+    },
+    {
+      "path": "backlog/issues/WF-M36-TEST.md",
+      "sha256": "f73f6cf65e24b0b8b993ef0b7a015c9419cca9dd14e892f3d0c72df92164d8d3"
+    },
+    {
+      "path": "backlog/issues/WF-M36-VERIFY.md",
+      "sha256": "c96aa392c66a326ec46d0277d746f00d08b6911ffd7778e50e8663109bfe05be"
+    },
+    {
+      "path": "docs/orchestration/AGENT_ADAPTER_PROTOCOL.md",
+      "sha256": "2413e69bd3aff462f746acdf0cbef594e06f0cbaf4c16a69c1a238c5f79c5135"
+    },
+    {
+      "path": "docs/orchestration/EXECUTION_PROTOCOL.md",
+      "sha256": "a207180b67b1f906305e5f2745aec3ec143f707f75d8ffc833bd57661c97d08a"
+    },
+    {
+      "path": "docs/security/CONTAINER_AND_HOST_BASELINE.md",
+      "sha256": "e68dfb270486db69e1cab587ea3b2d0d1f41f46ed62ca17c5f9b845d555f3ad8"
+    },
+    {
+      "path": "docs/security/CREDENTIALS_AND_CI.md",
+      "sha256": "549bef0efae48002bfeb010cdfd157d4d173767c378ee01c654a4d32108e9380"
+    },
+    {
+      "path": "docs/security/THREAT_MODEL.md",
+      "sha256": "777fe93382515ee8101a98c7326872557bcce5a9ba02824f58bc114d139ee40b"
+    },
+    {
+      "path": "reference/architecture/Consolidated_Self_Hosted_Technology_Stack_v7_Integrated.md",
+      "sha256": "0e4bedeac7c6158cc2997d00a60b7a01109052ff66fcb1e03245211be83e3de4"
+    },
+    {
+      "path": "reference/architecture/Integration_Contracts.md",
+      "sha256": "143a7a5844659dd7c0f36955ce3dea9b4480bd87d6544263b9ffd4f2d3bbbf37"
+    },
+    {
+      "path": "reference/architecture/Unified_Implementation_Guide.md",
+      "sha256": "09e837c901a32d472fe429d546adbecacc81d2eaa3b513e2da0d957fced63c34"
+    },
+    {
+      "path": "reference/components/component_registry.json",
+      "sha256": "de49779855eabdd7f5defc5ff6157d6a3e875f6164d64278c4a70338d029899e"
+    },
+    {
+      "path": "reference/mermaid/M01.mmd",
+      "sha256": "f2c8b8ac1338570e3f2e75c472bed12a5d3cd61de7de384c7efc753261614e96"
+    },
+    {
+      "path": "reference/mermaid/M02.mmd",
+      "sha256": "e26189d726e54f5cbccc6bd66345f8b85eb8db7f4c433d0e48826ca005a93e33"
+    },
+    {
+      "path": "reference/mermaid/M03.mmd",
+      "sha256": "e594fa94a79ba2907f0d3f1dce67b41876eec1723a6d8602a964964ede6188fa"
+    },
+    {
+      "path": "reference/mermaid/M04.mmd",
+      "sha256": "d4c73d472ac997ecfccea3badf7eeeebe0e9884cad9f1fc3a0b6e3fc581554d4"
+    },
+    {
+      "path": "reference/mermaid/M05.mmd",
+      "sha256": "ca1b9ba3cfc91f97fce8f9b04f19521d9d0b826de1e81a4332c6c60cbea53f4d"
+    },
+    {
+      "path": "reference/mermaid/M06.mmd",
+      "sha256": "9d9005d3cac6146209d701d94def331abad52c3814a46a5563c0767c3bd9e943"
+    },
+    {
+      "path": "reference/mermaid/M07.mmd",
+      "sha256": "bd3f0345b757982fb4ddfe430d5f41bcac2b6e0a90ffdc2b4966550a72375027"
+    },
+    {
+      "path": "reference/mermaid/M08.mmd",
+      "sha256": "5de1e444ef67a8dc9e72a36b38ac5fd7968a1d757c5e3465650a89f190b41704"
+    },
+    {
+      "path": "reference/mermaid/M09.mmd",
+      "sha256": "c17ee610635ebb274dbd587ca5f9ae4bc745904182d3f0a174da5c09c9ff6de8"
+    },
+    {
+      "path": "reference/mermaid/M10.mmd",
+      "sha256": "0c958da314df582dffa943e90e36a760cc797a75a952a273e9f445d732bd20ba"
+    },
+    {
+      "path": "reference/mermaid/M11.mmd",
+      "sha256": "0165d157ab807f237acddb44e7eb80caf3047b40c3088354c27dd5005a5319fd"
+    },
+    {
+      "path": "reference/mermaid/M12.mmd",
+      "sha256": "31f4d6f69968903a9380b5364709d7e02288dfcfe929dd446a1cb8eae05f118d"
+    },
+    {
+      "path": "reference/mermaid/M13.mmd",
+      "sha256": "674ad7533be15326c1245a8f0e1518e694e663bc198c479f914848f7ee746d24"
+    },
+    {
+      "path": "reference/mermaid/M14.mmd",
+      "sha256": "b35830c3128adfc2d9345ba6d52c16a5025c81b268903e254d9a705fbe83dd72"
+    },
+    {
+      "path": "reference/mermaid/M15.mmd",
+      "sha256": "fb07cd9edc5e57b905d5badaeafa8aa99fd3ff73e7250669d74685927adad008"
+    },
+    {
+      "path": "reference/mermaid/M16.mmd",
+      "sha256": "f184472d59306320dbf21ddc3ea8d7328af16aa53cb46102566613250ab25a42"
+    },
+    {
+      "path": "reference/mermaid/M17.mmd",
+      "sha256": "783858f8e097e1c232fe7220d887efa4ffe6041a5ecac23e303e79881433dca1"
+    },
+    {
+      "path": "reference/mermaid/M18.mmd",
+      "sha256": "b293120486868a03117bdf79816beca166293662a05be88cc8fe477a774524f6"
+    },
+    {
+      "path": "reference/mermaid/M19.mmd",
+      "sha256": "d6455707126b8e691e6e0a23630eb1fb36a11efd4da07a7841753fb7a75df604"
+    },
+    {
+      "path": "reference/mermaid/M20.mmd",
+      "sha256": "c16b1f405a9b71f16734cebb1996084778722cfc6f08fd34f83f41e6a4522f1c"
+    },
+    {
+      "path": "reference/mermaid/M21.mmd",
+      "sha256": "6f7ba97615a8de454aecfd91bc84acfa24b9ea3ffed70490f5f1db93244df64a"
+    },
+    {
+      "path": "reference/mermaid/M22.mmd",
+      "sha256": "bbe2a3507c6d61bf527103e1cd6c1efd0edecbe5c264f78fd5f9892c85877332"
+    },
+    {
+      "path": "reference/mermaid/M23.mmd",
+      "sha256": "7240df1f46a56ccc1ffe950354e603f265ceb01da0fd040aa01ec5fbce894bc5"
+    },
+    {
+      "path": "reference/mermaid/M24.mmd",
+      "sha256": "5fb64beeede66e0d5915efee2437086a6d6a7b4b5039ab9e543fb484401ed2d3"
+    },
+    {
+      "path": "reference/mermaid/M25.mmd",
+      "sha256": "dfe336de46e5c83d7faadb0cf3a979f7473b2e52481ae1b42bf562ab3c9a4873"
+    },
+    {
+      "path": "reference/mermaid/M26.mmd",
+      "sha256": "0118e4aad0995cc1a8b1de92a4ff96154e6000ed62d067d89a0a81fddf82ea0e"
+    },
+    {
+      "path": "reference/mermaid/M27.mmd",
+      "sha256": "db949526dba5b7671191b57969e7a382a1f5e0ef0edaf795d23f58ae4d681d02"
+    },
+    {
+      "path": "reference/mermaid/M28.mmd",
+      "sha256": "4e2f300608e3890b9c5be9c099309002e2a77f9e6b434adfc3af82c44fa67daf"
+    },
+    {
+      "path": "reference/mermaid/M29.mmd",
+      "sha256": "cade90f1d3fd9637ac51c583bb5065c132bf28d07ec155c720bdb2072c6d4f4e"
+    },
+    {
+      "path": "reference/mermaid/M30.mmd",
+      "sha256": "5d2cd465eb75ea50373fd22a5b1443693279f67a6488684e3c755a0a663139bc"
+    },
+    {
+      "path": "reference/mermaid/M31.mmd",
+      "sha256": "19b8aa1762eb136ce254c67acc9716df722365ab2b57dcef24d28bb8825d3f32"
+    },
+    {
+      "path": "reference/mermaid/M32.mmd",
+      "sha256": "dd15ac7ddad7ac0f30a5a1f4449320a73287f268d099030f10f8e597943f1862"
+    },
+    {
+      "path": "reference/mermaid/M33.mmd",
+      "sha256": "d5afa0cca8c768f760108399b6a0575aacc1a9f0518c6e7957965d12b98fc1d5"
+    },
+    {
+      "path": "reference/mermaid/M34.mmd",
+      "sha256": "8312acb98794267b17e0d11ce8a5b38c1efe5fa63533f20d41aa8c43ecd94a98"
+    },
+    {
+      "path": "reference/mermaid/M35.mmd",
+      "sha256": "310920349ed8c5c9a179514d84a6c23b195ac3a39519fd69326047fb2f209760"
+    },
+    {
+      "path": "reference/mermaid/M36.mmd",
+      "sha256": "bc3eb76b6fe9210c5abff152cbba95a1c874ca90e3f7a101a8b1f7b7a14527c1"
+    },
+    {
+      "path": "reference/provenance.json",
+      "sha256": "aba64680d866d7a907e74fdec737760121c6744479cbcc595520d503246331dd"
+    },
+    {
+      "path": "reference/workflows/M01.json",
+      "sha256": "3401c386c0c8c8a2c28333b14aabe86f9af5bf014dc7094edf585e5a8e98588a"
+    },
+    {
+      "path": "reference/workflows/M02.json",
+      "sha256": "9e0ce8c9a69604b3c0dd25645622c1cbe1251514dd7b4d00c7051ff5703254c0"
+    },
+    {
+      "path": "reference/workflows/M03.json",
+      "sha256": "803ff72023cde8b5c032dca64d3b3a5758ff7191d16f9823f2e99d28e1c11bbf"
+    },
+    {
+      "path": "reference/workflows/M04.json",
+      "sha256": "cc1559a6fc8a181afa9ff9896827af580e0fee9c6af6721e3067a8fa79dc9fcb"
+    },
+    {
+      "path": "reference/workflows/M05.json",
+      "sha256": "c5665d856964dbae438a70fcc9df35bcc9e115b7f9e8220d48fd4e86ec25edc4"
+    },
+    {
+      "path": "reference/workflows/M06.json",
+      "sha256": "12064e1928b9e5240b00e526e9abc684c34033dbd5c4a155c2d5c826b4dff098"
+    },
+    {
+      "path": "reference/workflows/M07.json",
+      "sha256": "1f282d04b3a5f008123d6eabc9031c58d0d99ff25c0293593f85a28db951669a"
+    },
+    {
+      "path": "reference/workflows/M08.json",
+      "sha256": "cd3c91a8e3bb60b808b549c2a6d9a786bcec0f7886535e9f7487b8ef210de91b"
+    },
+    {
+      "path": "reference/workflows/M09.json",
+      "sha256": "b532ac253ec83cb0822e933531e104b3c14e9b209fe0f0d6e7d16ed5b15c633c"
+    },
+    {
+      "path": "reference/workflows/M10.json",
+      "sha256": "b5d47edc69267a2f2765fa5f5e8a121296bc99b1d6e001919d42277bdc3944ec"
+    },
+    {
+      "path": "reference/workflows/M11.json",
+      "sha256": "b347da8dab7a64ac74902f9da6585758cd0b0f91ad32bd6b973e16e40e84f963"
+    },
+    {
+      "path": "reference/workflows/M12.json",
+      "sha256": "e55590dc1b05f614e619e5b884d8b165686655234cdb8d2e8c7e3253d84c02e2"
+    },
+    {
+      "path": "reference/workflows/M13.json",
+      "sha256": "ed43c08762524b9d45ff5373a9e6a0e0ab5d952b21381951c40902e97b865a75"
+    },
+    {
+      "path": "reference/workflows/M14.json",
+      "sha256": "0f156719601ceec8081f17e88d59f81e37ee510bdb83c87ce8fc2b1d24458b47"
+    },
+    {
+      "path": "reference/workflows/M15.json",
+      "sha256": "26a95dd11ebdd50ee150da677306faaf47ac9719a48b8f677da65d262c6a0d88"
+    },
+    {
+      "path": "reference/workflows/M16.json",
+      "sha256": "3185d1487ef686f25f4e3ce4e8bcaf20f2795450733334a4b2fe89964db7165d"
+    },
+    {
+      "path": "reference/workflows/M17.json",
+      "sha256": "3019b84982390c5d74bccc2a7cc0c255d6951f144ea5952a3c17fe5e6e8080c4"
+    },
+    {
+      "path": "reference/workflows/M18.json",
+      "sha256": "bc627143795b81ce791bff8cae1e68242167bfe033476c14ccf633c65fd86d25"
+    },
+    {
+      "path": "reference/workflows/M19.json",
+      "sha256": "79378bdf68eafef766be558788bba7c835fadd264d8d6faa7d43ec9db1e7dea2"
+    },
+    {
+      "path": "reference/workflows/M20.json",
+      "sha256": "0345afe3c2258ca696b20b3bb55ed84f308948bdafc0cfc3f3331b27a99ad7bc"
+    },
+    {
+      "path": "reference/workflows/M21.json",
+      "sha256": "d563555177ee4b9b1960168a5f3ab4f3e4cb4323918baa6fa0c61aadb2f3d3b8"
+    },
+    {
+      "path": "reference/workflows/M22.json",
+      "sha256": "98d203ec202874d15e8fec6be12e8750775fa9525ef94ed19842ce70f81bb1be"
+    },
+    {
+      "path": "reference/workflows/M23.json",
+      "sha256": "275e7110408feee26c9ee9963eeddac97ae358bfa19a379f9e22cb062ed09b1e"
+    },
+    {
+      "path": "reference/workflows/M24.json",
+      "sha256": "b09d24e3943558719dd43433f00a4568c2e8d7821dd73ac3d111ff82e9fc465c"
+    },
+    {
+      "path": "reference/workflows/M25.json",
+      "sha256": "5ba1b25bc4dd422378c7359c97df18fc3501e80c01605712c10ff72ab8f6fb8e"
+    },
+    {
+      "path": "reference/workflows/M26.json",
+      "sha256": "0067d0ae8fb6200dd80424063249b354f3c9abe33d8c338cae245bf4e969415f"
+    },
+    {
+      "path": "reference/workflows/M27.json",
+      "sha256": "4fd4d6046b555029ce0dbedd7d2cd6eaae78736a0d8add6f1ecda44224804317"
+    },
+    {
+      "path": "reference/workflows/M28.json",
+      "sha256": "44984ce641e37ae6e8771e9753433a19cdb1cc4e9b34ad9e102f233ee3b0d3ad"
+    },
+    {
+      "path": "reference/workflows/M29.json",
+      "sha256": "29ba8bc20e425ccecb4a8ccfdd348389c157f528f6c33170603c2553cf0af0da"
+    },
+    {
+      "path": "reference/workflows/M30.json",
+      "sha256": "25faae8ed4bfcd8b6fcf4bc0f0220e457376ea707bed41c89d436278c62bcd41"
+    },
+    {
+      "path": "reference/workflows/M31.json",
+      "sha256": "049284e625a03c68f4f42707b254d65b2737ad0b1efe2f0ac3058eed6f2a30d3"
+    },
+    {
+      "path": "reference/workflows/M32.json",
+      "sha256": "8fcded26175ed8a572d7d9063ad5b24204f65577cdfcffb98ddb195964bbebde"
+    },
+    {
+      "path": "reference/workflows/M33.json",
+      "sha256": "6e03e3cf5d18acbdc7b5bc0257695b3a0bf82614f197890c9ac51f1fda48d8d0"
+    },
+    {
+      "path": "reference/workflows/M34.json",
+      "sha256": "3078ba4b12ac9142320e4e1ea64829e133856bae8cc351bb4869fc7e4c80cb29"
+    },
+    {
+      "path": "reference/workflows/M35.json",
+      "sha256": "3dffe4a87955caeb26cd6799b43cb892bbacfcbdc0e1d66a08e4255dc05711ce"
+    },
+    {
+      "path": "reference/workflows/M36.json",
+      "sha256": "02b7553b6e08890c74e7303a735d9d934ca0d0b31330c0a8d0b6198f96e2d407"
+    },
+    {
+      "path": "schemas/agent-result.schema.json",
+      "sha256": "241f08532bb2aaa5bfacc0575a978d398a3d213e4359e6238c84e09312f0c97d"
+    },
+    {
+      "path": "schemas/evidence.schema.json",
+      "sha256": "85af1c150b29b4e3aab351d63ccbb80a95b159b24f14e7cb92fdae06bf34f9ef"
+    }
+  ]
+}

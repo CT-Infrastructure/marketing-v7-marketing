@@ -1,0 +1,93 @@
+{
+  "id": "M16",
+  "name": "Client onboarding",
+  "family": "Online marketing",
+  "subfamily": "D. Marketing agency operations",
+  "trigger": "Client agreement and permitted onboarding intake",
+  "steps": [
+    {
+      "action": "Client intake",
+      "software": "Native owner / bounded integration"
+    },
+    {
+      "action": "Mautic contact",
+      "software": "Mautic"
+    },
+    {
+      "action": "Activepieces checks",
+      "software": "Activepieces"
+    },
+    {
+      "action": "OpenProject client work",
+      "software": "OpenProject"
+    },
+    {
+      "action": "ResourceSpace authorized assets",
+      "software": "ResourceSpace"
+    }
+  ],
+  "gate": "Applicable permission, approval and destination readiness valid?",
+  "output": "Client project, permissions, assets, owner and audit trail",
+  "acceptance_tests": [
+    "Confirm source and outcome: Client project, permissions, assets, owner and audit trail",
+    "Reject stale authorization, wrong client and repeated action",
+    "Report missing data as unknown and reconcile external effects"
+  ],
+  "upstream": [
+    "X01",
+    "I13",
+    "M20"
+  ],
+  "handoffs": [
+    "M19",
+    "M18"
+  ],
+  "source": "Sources/V7/Online_Marketing_Workflow_Catalog_v7_2026-10-25.json #M16",
+  "conditional": false,
+  "notes": "None; enforce client isolation; Original source sequence is retained. All external effects additionally require the applicable final-boundary gate, including those earlier stages do not explicitly draw.",
+  "failure": "HOLD the affected channel, preserve provider IDs and event state, recheck permissions and source freshness; no blind repeat of sends, posts, rewards, payouts, or budget changes.",
+  "status": "DESIGN_SPECIFIED_NOT_DEPLOYED",
+  "baseline": "V7",
+  "consolidation_revision": 1,
+  "source_procedure": "WordPress/Mautic intake → Activepieces → OpenProject client project → ResourceSpace asset acquisition → controlled approvals",
+  "source_controls": [
+    "Use durable idempotency keys for incoming events and outbound actions.",
+    "Store operational state and audit references in PostgreSQL; monitor via Prometheus/Grafana/Loki.",
+    "Enforce client-level data and credentials isolation; do not assume application-wide multi-tenancy."
+  ],
+  "metrics": [
+    "time to onboarding completion",
+    "missing assets/permissions",
+    "kickoff readiness"
+  ],
+  "controls": [
+    "X01",
+    "X02",
+    "X03",
+    "X06",
+    "X10"
+  ],
+  "runtime_dependencies": [
+    "I10",
+    "I13",
+    "I15",
+    "I16",
+    "I19"
+  ],
+  "software": [
+    "Activepieces",
+    "Mautic",
+    "Native owner / bounded integration",
+    "OpenProject",
+    "ResourceSpace"
+  ],
+  "source_class": "retained-source-pattern",
+  "run_contract": {
+    "owner": "Assigned accountable role in OpenProject before activation",
+    "idempotency": "client_id + source_system + source_event_id + action_scope + approved_revision",
+    "retry": "Bounded retry only after retryability classification; unknown remote effects HOLD",
+    "observability": "workflow_id, run_id, correlation_id, state and redacted error; no raw PII labels",
+    "recovery": "Restore HOLD; reapply suppression/deletion and reconcile external receipts before replay",
+    "completion": "Named output plus acceptance evidence, not merely a running service"
+  }
+}

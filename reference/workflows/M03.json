@@ -1,0 +1,98 @@
+{
+  "id": "M03",
+  "name": "Sales follow-up",
+  "family": "Online marketing",
+  "subfamily": "A. Services and B2B marketing",
+  "trigger": "A marketing lead reaches the qualified threshold",
+  "steps": [
+    {
+      "action": "Mautic qualified lead",
+      "software": "Mautic"
+    },
+    {
+      "action": "Check outreach eligibility",
+      "software": "Native owner / bounded integration"
+    },
+    {
+      "action": "OpenProject assign owner",
+      "software": "OpenProject"
+    },
+    {
+      "action": "Optional booking / V4 call",
+      "software": "Native owner / bounded integration"
+    },
+    {
+      "action": "Record Mautic outcome",
+      "software": "Mautic"
+    }
+  ],
+  "gate": "Applicable permission, approval and destination readiness valid?",
+  "output": "Assigned follow-up, optionally booked meeting or authorized call outcome",
+  "acceptance_tests": [
+    "Confirm source and outcome: Assigned follow-up, optionally booked meeting or authorized call outcome",
+    "Reject stale authorization, wrong client and repeated action",
+    "Report missing data as unknown and reconcile external effects"
+  ],
+  "upstream": [
+    "X01",
+    "V07",
+    "V11",
+    "E13",
+    "M02",
+    "M14",
+    "M19"
+  ],
+  "handoffs": [
+    "V02",
+    "M36"
+  ],
+  "source": "Sources/V7/Online_Marketing_Workflow_Catalog_v7_2026-10-25.json #M03",
+  "conditional": true,
+  "notes": "Easy!Appointments conditional; no default addition; Original source sequence is retained. All external effects additionally require the applicable final-boundary gate, including those earlier stages do not explicitly draw.",
+  "failure": "HOLD the affected channel, preserve provider IDs and event state, recheck permissions and source freshness; no blind repeat of sends, posts, rewards, payouts, or budget changes.",
+  "status": "DESIGN_SPECIFIED_NOT_DEPLOYED",
+  "baseline": "V7",
+  "consolidation_revision": 1,
+  "source_procedure": "Mautic qualified stage → Activepieces eligibility check → OpenProject assignment → Mautic outcome; optionally V4 calling controller only with separate telephone authorization",
+  "source_controls": [
+    "Enforce channel-specific consent, unsubscribe/suppression, and contact minimization before action.",
+    "Use durable idempotency keys for incoming events and outbound actions.",
+    "Store operational state and audit references in PostgreSQL; monitor via Prometheus/Grafana/Loki.",
+    "Do not infer telephone/SMS permission from ordinary email marketing consent; apply channel-specific rules."
+  ],
+  "metrics": [
+    "time to first follow-up",
+    "meeting bookings",
+    "sales-qualified conversion"
+  ],
+  "controls": [
+    "X01",
+    "X02",
+    "X03",
+    "X06",
+    "X10",
+    "X04",
+    "V02"
+  ],
+  "runtime_dependencies": [
+    "I10",
+    "I13",
+    "I15",
+    "I16",
+    "I19"
+  ],
+  "software": [
+    "Mautic",
+    "Native owner / bounded integration",
+    "OpenProject"
+  ],
+  "source_class": "retained-source-pattern",
+  "run_contract": {
+    "owner": "Assigned accountable role in OpenProject before activation",
+    "idempotency": "client_id + source_system + source_event_id + action_scope + approved_revision",
+    "retry": "Bounded retry only after retryability classification; unknown remote effects HOLD",
+    "observability": "workflow_id, run_id, correlation_id, state and redacted error; no raw PII labels",
+    "recovery": "Restore HOLD; reapply suppression/deletion and reconcile external receipts before replay",
+    "completion": "Named output plus acceptance evidence, not merely a running service"
+  }
+}

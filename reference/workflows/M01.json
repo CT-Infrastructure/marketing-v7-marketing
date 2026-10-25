@@ -1,0 +1,103 @@
+{
+  "id": "M01",
+  "name": "Lead capture and contact management",
+  "family": "Online marketing",
+  "subfamily": "A. Services and B2B marketing",
+  "trigger": "A verified website form submission",
+  "steps": [
+    {
+      "action": "WordPress landing page",
+      "software": "WordPress"
+    },
+    {
+      "action": "Mautic form + validation",
+      "software": "Mautic"
+    },
+    {
+      "action": "Mautic contact + consent",
+      "software": "Mautic"
+    },
+    {
+      "action": "Activepieces routing",
+      "software": "Activepieces"
+    },
+    {
+      "action": "OpenProject handoff",
+      "software": "OpenProject"
+    }
+  ],
+  "gate": "Applicable permission, approval and destination readiness valid?",
+  "output": "Validated contact, route and accountable sales work item",
+  "acceptance_tests": [
+    "Confirm source and outcome: Validated contact, route and accountable sales work item",
+    "Reject stale authorization, wrong client and repeated action",
+    "Report missing data as unknown and reconcile external effects"
+  ],
+  "upstream": [
+    "X01",
+    "I14",
+    "I16",
+    "C57",
+    "C58",
+    "C59",
+    "C60",
+    "C61",
+    "C62",
+    "C63",
+    "C64"
+  ],
+  "handoffs": [
+    "M25",
+    "M06",
+    "M19"
+  ],
+  "source": "Sources/V7/Online_Marketing_Workflow_Catalog_v7_2026-10-25.json #M01",
+  "conditional": false,
+  "notes": "None; Original source sequence is retained. All external effects additionally require the applicable final-boundary gate, including those earlier stages do not explicitly draw.",
+  "failure": "HOLD the affected channel, preserve provider IDs and event state, recheck permissions and source freshness; no blind repeat of sends, posts, rewards, payouts, or budget changes.",
+  "status": "DESIGN_SPECIFIED_NOT_DEPLOYED",
+  "baseline": "V7",
+  "consolidation_revision": 1,
+  "source_procedure": "WordPress landing page → Mautic form → permission and deduplication in Mautic → Activepieces routing → OpenProject task",
+  "source_controls": [
+    "Enforce channel-specific consent, unsubscribe/suppression, and contact minimization before action.",
+    "Use durable idempotency keys for incoming events and outbound actions.",
+    "Store operational state and audit references in PostgreSQL; monitor via Prometheus/Grafana/Loki."
+  ],
+  "metrics": [
+    "validated leads",
+    "lead qualification rate",
+    "contact duplicate rate",
+    "handoff latency"
+  ],
+  "controls": [
+    "X01",
+    "X02",
+    "X03",
+    "X06",
+    "X10",
+    "X04"
+  ],
+  "runtime_dependencies": [
+    "I10",
+    "I13",
+    "I15",
+    "I16",
+    "I19"
+  ],
+  "software": [
+    "Activepieces",
+    "Mautic",
+    "OpenProject",
+    "WordPress"
+  ],
+  "source_class": "retained-source-pattern",
+  "run_contract": {
+    "owner": "Assigned accountable role in OpenProject before activation",
+    "idempotency": "client_id + source_system + source_event_id + action_scope + approved_revision",
+    "retry": "Bounded retry only after retryability classification; unknown remote effects HOLD",
+    "observability": "workflow_id, run_id, correlation_id, state and redacted error; no raw PII labels",
+    "recovery": "Restore HOLD; reapply suppression/deletion and reconcile external receipts before replay",
+    "completion": "Named output plus acceptance evidence, not merely a running service"
+  }
+}

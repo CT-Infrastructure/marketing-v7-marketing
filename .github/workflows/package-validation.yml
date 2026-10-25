@@ -1,0 +1,21 @@
+name: Package validation
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: package-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  package-validation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1; verify before adoption
+        with:
+          persist-credentials: false
+      - name: Validate package and build DAG
+        run: python3 tools/validate_scope.py

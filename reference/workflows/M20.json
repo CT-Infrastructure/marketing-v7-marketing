@@ -1,0 +1,102 @@
+{
+  "id": "M20",
+  "name": "Automated client reports",
+  "family": "Online marketing",
+  "subfamily": "D. Marketing agency operations",
+  "trigger": "Client reporting period reaches its deadline",
+  "steps": [
+    {
+      "action": "Scheduled data collection",
+      "software": "Native owner / bounded integration"
+    },
+    {
+      "action": "PostgreSQL source snapshots",
+      "software": "PostgreSQL"
+    },
+    {
+      "action": "Grafana figures + Pandoc",
+      "software": "Grafana / Pandoc"
+    },
+    {
+      "action": "OpenProject approval",
+      "software": "OpenProject"
+    },
+    {
+      "action": "Approved client delivery",
+      "software": "Native owner / bounded integration"
+    }
+  ],
+  "gate": "Applicable permission, approval and destination readiness valid?",
+  "output": "Approved, delivered client performance report",
+  "acceptance_tests": [
+    "Confirm source and outcome: Approved, delivered client performance report",
+    "Reject stale authorization, wrong client and repeated action",
+    "Report missing data as unknown and reconcile external effects"
+  ],
+  "upstream": [
+    "X01",
+    "X10",
+    "C57",
+    "C58",
+    "C59",
+    "C60",
+    "C61",
+    "C62",
+    "C63",
+    "C64",
+    "M18"
+  ],
+  "handoffs": [
+    "M16",
+    "M35"
+  ],
+  "source": "Sources/V7/Online_Marketing_Workflow_Catalog_v7_2026-10-25.json #M20",
+  "conditional": true,
+  "notes": "None; Typst conditional for PDFs; Original source sequence is retained. All external effects additionally require the applicable final-boundary gate, including those earlier stages do not explicitly draw.",
+  "failure": "HOLD the affected channel, preserve provider IDs and event state, recheck permissions and source freshness; no blind repeat of sends, posts, rewards, payouts, or budget changes.",
+  "status": "DESIGN_SPECIFIED_NOT_DEPLOYED",
+  "baseline": "V7",
+  "consolidation_revision": 1,
+  "source_procedure": "Activepieces scheduled sources → PostgreSQL → Grafana data / controlled templates → Pandoc → OpenProject approval → authorized distribution",
+  "source_controls": [
+    "Use durable idempotency keys for incoming events and outbound actions.",
+    "Store operational state and audit references in PostgreSQL; monitor via Prometheus/Grafana/Loki.",
+    "Human approval and required rights/factual checks bind to the exact revision and intended destination.",
+    "Record metric source and freshness; unknown and missing data must not be presented as zero.",
+    "Enforce client-level data and credentials isolation; do not assume application-wide multi-tenancy."
+  ],
+  "metrics": [
+    "report delivery time",
+    "data completeness",
+    "corrections needed"
+  ],
+  "controls": [
+    "X01",
+    "X02",
+    "X03",
+    "X06",
+    "X10"
+  ],
+  "runtime_dependencies": [
+    "I10",
+    "I13",
+    "I15",
+    "I16",
+    "I19"
+  ],
+  "software": [
+    "Grafana / Pandoc",
+    "Native owner / bounded integration",
+    "OpenProject",
+    "PostgreSQL"
+  ],
+  "source_class": "retained-source-pattern",
+  "run_contract": {
+    "owner": "Assigned accountable role in OpenProject before activation",
+    "idempotency": "client_id + source_system + source_event_id + action_scope + approved_revision",
+    "retry": "Bounded retry only after retryability classification; unknown remote effects HOLD",
+    "observability": "workflow_id, run_id, correlation_id, state and redacted error; no raw PII labels",
+    "recovery": "Restore HOLD; reapply suppression/deletion and reconcile external receipts before replay",
+    "completion": "Named output plus acceptance evidence, not merely a running service"
+  }
+}

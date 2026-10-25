@@ -1,0 +1,93 @@
+{
+  "id": "M31",
+  "name": "Webinar registration and follow-up",
+  "family": "Online marketing",
+  "subfamily": "E. Cross-industry marketing workflows",
+  "trigger": "Approved webinar or online event campaign",
+  "steps": [
+    {
+      "action": "WordPress + Mautic registration",
+      "software": "WordPress / Mautic"
+    },
+    {
+      "action": "V5 email confirmation",
+      "software": "Native owner / bounded integration"
+    },
+    {
+      "action": "Authorized webinar service",
+      "software": "Native owner / bounded integration"
+    },
+    {
+      "action": "Attendance evidence",
+      "software": "Native owner / bounded integration"
+    },
+    {
+      "action": "Mautic follow-up",
+      "software": "Mautic"
+    }
+  ],
+  "gate": "Applicable permission, approval and destination readiness valid?",
+  "output": "Registration, authorized event session and follow-up segment",
+  "acceptance_tests": [
+    "Confirm source and outcome: Registration, authorized event session and follow-up segment",
+    "Reject stale authorization, wrong client and repeated action",
+    "Report missing data as unknown and reconcile external effects"
+  ],
+  "upstream": [
+    "X01"
+  ],
+  "handoffs": [
+    "C56",
+    "M02"
+  ],
+  "source": "Sources/V7/Online_Marketing_Workflow_Catalog_v7_2026-10-25.json #M31",
+  "conditional": true,
+  "notes": "Existing meeting platform external or Jitsi conditional; pretix for ticketing; Original source sequence is retained. All external effects additionally require the applicable final-boundary gate, including those earlier stages do not explicitly draw.",
+  "failure": "HOLD the affected channel, preserve provider IDs and event state, recheck permissions and source freshness; no blind repeat of sends, posts, rewards, payouts, or budget changes.",
+  "status": "DESIGN_SPECIFIED_NOT_DEPLOYED",
+  "baseline": "V7",
+  "consolidation_revision": 1,
+  "source_procedure": "WordPress + Mautic form → reminders via V5 → approved event delivery → attendance event → Mautic nurturing",
+  "source_controls": [
+    "Enforce channel-specific consent, unsubscribe/suppression, and contact minimization before action.",
+    "Use durable idempotency keys for incoming events and outbound actions.",
+    "Store operational state and audit references in PostgreSQL; monitor via Prometheus/Grafana/Loki.",
+    "Do not bypass the Version 5 Mautic dispatch guard, SMTP limits, provider suppressions, or sending eligibility checks.",
+    "External platform/API access remains governed by provider permissions, policy, rate limits, and business compliance."
+  ],
+  "metrics": [
+    "registrations",
+    "attendance rate",
+    "post-event qualified leads"
+  ],
+  "controls": [
+    "X01",
+    "X02",
+    "X03",
+    "X06",
+    "X10",
+    "X04",
+    "E11"
+  ],
+  "runtime_dependencies": [
+    "I10",
+    "I13",
+    "I15",
+    "I16",
+    "I19"
+  ],
+  "software": [
+    "Mautic",
+    "Native owner / bounded integration",
+    "WordPress / Mautic"
+  ],
+  "source_class": "retained-source-pattern",
+  "run_contract": {
+    "owner": "Assigned accountable role in OpenProject before activation",
+    "idempotency": "client_id + source_system + source_event_id + action_scope + approved_revision",
+    "retry": "Bounded retry only after retryability classification; unknown remote effects HOLD",
+    "observability": "workflow_id, run_id, correlation_id, state and redacted error; no raw PII labels",
+    "recovery": "Restore HOLD; reapply suppression/deletion and reconcile external receipts before replay",
+    "completion": "Named output plus acceptance evidence, not merely a running service"
+  }
+}

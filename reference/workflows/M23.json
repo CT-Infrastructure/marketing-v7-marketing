@@ -1,0 +1,91 @@
+{
+  "id": "M23",
+  "name": "Email/site A/B tests",
+  "family": "Online marketing",
+  "subfamily": "E. Cross-industry marketing workflows",
+  "trigger": "Approved experiment and specified success measure",
+  "steps": [
+    {
+      "action": "Mautic email or WordPress variant",
+      "software": "WordPress / Mautic"
+    },
+    {
+      "action": "Assign eligible audiences",
+      "software": "Native owner / bounded integration"
+    },
+    {
+      "action": "Matomo/Mautic conversions",
+      "software": "Mautic / Matomo"
+    },
+    {
+      "action": "Analyze uncertainty",
+      "software": "Native owner / bounded integration"
+    },
+    {
+      "action": "OpenProject rollout approval",
+      "software": "OpenProject"
+    }
+  ],
+  "gate": "Applicable permission, approval and destination readiness valid?",
+  "output": "Experiment result with defined outcome, uncertainty, and rollout decision",
+  "acceptance_tests": [
+    "Confirm source and outcome: Experiment result with defined outcome, uncertainty, and rollout decision",
+    "Reject stale authorization, wrong client and repeated action",
+    "Report missing data as unknown and reconcile external effects"
+  ],
+  "upstream": [
+    "X01",
+    "M24"
+  ],
+  "handoffs": [
+    "M24",
+    "M11"
+  ],
+  "source": "Sources/V7/Online_Marketing_Workflow_Catalog_v7_2026-10-25.json #M23",
+  "conditional": true,
+  "notes": "GrowthBook conditional for mature website experiments; Original source sequence is retained. All external effects additionally require the applicable final-boundary gate, including those earlier stages do not explicitly draw.",
+  "failure": "HOLD the affected channel, preserve provider IDs and event state, recheck permissions and source freshness; no blind repeat of sends, posts, rewards, payouts, or budget changes.",
+  "status": "DESIGN_SPECIFIED_NOT_DEPLOYED",
+  "baseline": "V7",
+  "consolidation_revision": 1,
+  "source_procedure": "Mautic native email variants, or WordPress controlled variant allocation → Matomo goals → analysis → OpenProject promotion approval",
+  "source_controls": [
+    "Use durable idempotency keys for incoming events and outbound actions.",
+    "Store operational state and audit references in PostgreSQL; monitor via Prometheus/Grafana/Loki.",
+    "Record metric source and freshness; unknown and missing data must not be presented as zero."
+  ],
+  "metrics": [
+    "experiment conversion lift with uncertainty",
+    "sample coverage",
+    "allocation integrity"
+  ],
+  "controls": [
+    "X01",
+    "X02",
+    "X03",
+    "X06",
+    "X10"
+  ],
+  "runtime_dependencies": [
+    "I10",
+    "I13",
+    "I15",
+    "I16",
+    "I19"
+  ],
+  "software": [
+    "Mautic / Matomo",
+    "Native owner / bounded integration",
+    "OpenProject",
+    "WordPress / Mautic"
+  ],
+  "source_class": "retained-source-pattern",
+  "run_contract": {
+    "owner": "Assigned accountable role in OpenProject before activation",
+    "idempotency": "client_id + source_system + source_event_id + action_scope + approved_revision",
+    "retry": "Bounded retry only after retryability classification; unknown remote effects HOLD",
+    "observability": "workflow_id, run_id, correlation_id, state and redacted error; no raw PII labels",
+    "recovery": "Restore HOLD; reapply suppression/deletion and reconcile external receipts before replay",
+    "completion": "Named output plus acceptance evidence, not merely a running service"
+  }
+}
