@@ -1,0 +1,14 @@
+{
+  "baseline": "V7 consolidation revision 1",
+  "source_zip": "Marketing_V7_Integrated_Implementation_2026-10-25.zip",
+  "source_zip_sha256": "4d65ce32429d4b4384acdf67af6547755d678f0be763d22b34d81542b996294c",
+  "source_catalog_sha256": "81dc956e217f807a86e87e1bf09d715d1c43860979e783daef536e49ed5ef7be",
+  "original_workflows": 190,
+  "original_component_entries": 147,
+  "original_acceptance_cases": 576,
+  "original_runtime_connections": 1847,
+  "raw_legacy_evidence_included": false,
+  "exclusion_reason": "Original historical bundle may contain sensitive operational identifiers and recovery material. Retain privately; ingest only sanitized row evidence after authorized review.",
+  "source_status": "Design reference; no production deployment attested",
+  "generated_date": "2026-10-25"
+}

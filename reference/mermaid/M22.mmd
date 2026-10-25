@@ -1,0 +1,31 @@
+flowchart TB
+  IN["M22: Scheduled competitor review or detected<br/>public-page change"]:::source
+  CONTROL["Required controls<br/>X01, X02, X03, X06, X10"]:::control
+  S1["SearXNG public discovery<br/><b>Native owner / bounded integration</b>"]:::process
+  IN --> S1
+  S2["Permitted Playwright snapshot<br/><b>Playwright</b>"]:::process
+  S1 --> S2
+  S3["PostgreSQL change check<br/><b>PostgreSQL</b>"]:::process
+  S2 --> S3
+  S4["llama.cpp digest<br/><b>llama.cpp</b>"]:::process
+  S3 --> S4
+  GATE{"Applicable permission, approval and<br/>destination readiness valid?"}:::gate
+  S4 --> GATE
+  GATE -- "No / unknown" --> HOLD["HOLD<br/>Repair, review or reconcile"]:::hold
+  CONTROL -. "enforced at action boundary" .-> GATE
+  S5["OpenProject action<br/><b>OpenProject</b>"]:::process
+  GATE -- "Yes" --> S5
+  OUT["Auditable change digest and a human-approved<br/>action"]:::done
+  S5 --> OUT
+  NEXT["Connected handoffs<br/>C03, M11"]:::ext
+  OUT --> NEXT
+
+classDef source fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e,stroke-width:1.6px;
+classDef process fill:#f8fafc,stroke:#94a3b8,color:#172554,stroke-width:1.4px;
+classDef gate fill:#fff7d6,stroke:#d97706,color:#78350f,stroke-width:1.8px;
+classDef control fill:#ede9fe,stroke:#8b5cf6,color:#4c1d95,stroke-dasharray:5 4;
+classDef done fill:#ccfbf1,stroke:#0f766e,color:#134e4a,stroke-width:1.8px;
+classDef hold fill:#fff1f2,stroke:#e11d48,color:#881337,stroke-width:1.5px;
+classDef legacy fill:#fdf2f8,stroke:#9d174d,color:#831843;
+classDef ext fill:#ecfeff,stroke:#0891b2,color:#164e63;
+

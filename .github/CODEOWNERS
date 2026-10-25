@@ -1,0 +1,7 @@
+# Human owner validated by active organization owner membership.
+* @CompleteDotTech
+/.github/ @CompleteDotTech
+/tools/ @CompleteDotTech
+/orchestration/ @CompleteDotTech
+/schemas/ @CompleteDotTech
+/config/ @CompleteDotTech

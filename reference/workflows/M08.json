@@ -1,0 +1,95 @@
+{
+  "id": "M08",
+  "name": "Post-purchase cross-sell/upsell",
+  "family": "Online marketing",
+  "subfamily": "B. Ecommerce and conversion marketing",
+  "trigger": "Confirmed purchase or fulfillment milestone",
+  "steps": [
+    {
+      "action": "Verified order event",
+      "software": "Native owner / bounded integration"
+    },
+    {
+      "action": "Match relevant products",
+      "software": "Native owner / bounded integration"
+    },
+    {
+      "action": "Mautic eligibility segment",
+      "software": "Mautic"
+    },
+    {
+      "action": "Authorized post-purchase offer",
+      "software": "Native owner / bounded integration"
+    },
+    {
+      "action": "Record attributed outcome",
+      "software": "Native owner / bounded integration"
+    }
+  ],
+  "gate": "Applicable permission, approval and destination readiness valid?",
+  "output": "Auditable targeted offer and measured incremental purchase",
+  "acceptance_tests": [
+    "Confirm source and outcome: Auditable targeted offer and measured incremental purchase",
+    "Reject stale authorization, wrong client and repeated action",
+    "Report missing data as unknown and reconcile external effects"
+  ],
+  "upstream": [
+    "X01",
+    "M07",
+    "M34",
+    "L05"
+  ],
+  "handoffs": [
+    "M09",
+    "M34"
+  ],
+  "source": "Sources/V7/Online_Marketing_Workflow_Catalog_v7_2026-10-25.json #M08",
+  "conditional": true,
+  "notes": "Conditional ecommerce/order data; Original source sequence is retained. All external effects additionally require the applicable final-boundary gate, including those earlier stages do not explicitly draw.",
+  "failure": "HOLD the affected channel, preserve provider IDs and event state, recheck permissions and source freshness; no blind repeat of sends, posts, rewards, payouts, or budget changes.",
+  "status": "DESIGN_SPECIFIED_NOT_DEPLOYED",
+  "baseline": "V7",
+  "consolidation_revision": 1,
+  "source_procedure": "Validated order → Mautic lifecycle segment → approved relevant recommendations → V5 dispatch → revenue measurement",
+  "source_controls": [
+    "Enforce channel-specific consent, unsubscribe/suppression, and contact minimization before action.",
+    "Use durable idempotency keys for incoming events and outbound actions.",
+    "Store operational state and audit references in PostgreSQL; monitor via Prometheus/Grafana/Loki.",
+    "Do not bypass the Version 5 Mautic dispatch guard, SMTP limits, provider suppressions, or sending eligibility checks.",
+    "Reconcile purchase, refund, commission, points, and budget outcomes against the authoritative system."
+  ],
+  "metrics": [
+    "repeat purchase rate",
+    "incremental upsell revenue",
+    "returns/refunds"
+  ],
+  "controls": [
+    "X01",
+    "X02",
+    "X03",
+    "X06",
+    "X10",
+    "X04",
+    "E11"
+  ],
+  "runtime_dependencies": [
+    "I10",
+    "I13",
+    "I15",
+    "I16",
+    "I19"
+  ],
+  "software": [
+    "Mautic",
+    "Native owner / bounded integration"
+  ],
+  "source_class": "retained-source-pattern",
+  "run_contract": {
+    "owner": "Assigned accountable role in OpenProject before activation",
+    "idempotency": "client_id + source_system + source_event_id + action_scope + approved_revision",
+    "retry": "Bounded retry only after retryability classification; unknown remote effects HOLD",
+    "observability": "workflow_id, run_id, correlation_id, state and redacted error; no raw PII labels",
+    "recovery": "Restore HOLD; reapply suppression/deletion and reconcile external receipts before replay",
+    "completion": "Named output plus acceptance evidence, not merely a running service"
+  }
+}

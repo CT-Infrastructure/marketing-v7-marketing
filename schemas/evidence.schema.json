@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "task_key",
+    "tested_commit",
+    "environment",
+    "evidence_level",
+    "cases",
+    "independent_executor",
+    "artifact_hashes"
+  ],
+  "properties": {
+    "task_key": {
+      "type": "string"
+    },
+    "tested_commit": {
+      "type": "string"
+    },
+    "environment": {
+      "type": "string"
+    },
+    "evidence_level": {
+      "enum": [
+        "CODE_MERGED",
+        "SANDBOX_QUALIFIED",
+        "STAGING_QUALIFIED",
+        "PRODUCTION_APPROVED"
+      ]
+    },
+    "cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "status",
+          "reason"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "NOT_RUN",
+              "NOT_APPLICABLE"
+            ]
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "independent_executor": {
+      "type": "string"
+    },
+    "artifact_hashes": {
+      "type": "object"
+    },
+    "limitations": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": false
+}
