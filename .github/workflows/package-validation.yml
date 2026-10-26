@@ -19,3 +19,19 @@ jobs:
           persist-credentials: false
       - name: Validate package and build DAG
         run: python3 tools/validate_scope.py
+  public-component:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Check runner Python capability
+        shell: bash
+        run: |
+          python3 -B -c 'import sys; print(sys.version); sys.exit(0 if (3, 12) <= sys.version_info[:2] < (4, 0) else "Python >=3.12 and <4.0 required")'
+      - name: Validate public assembly and component (partial F04 coverage)
+        shell: bash
+        run: bash .github/scripts/validate-public-component.sh cp141
