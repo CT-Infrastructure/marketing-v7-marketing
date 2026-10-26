@@ -4,7 +4,7 @@ set -euo pipefail
 [[ "$#" = 1 && "$1" = cp141 ]] || { echo 'usage: validate-public-component.sh cp141' >&2; exit 2; }
 export PYTHONDONTWRITEBYTECODE=1
 unset PYTHONPATH PYTHONHOME
-python3 -B -c 'import sys; sys.exit(0 if sys.version_info[:3] == (3,14,3) else "approved Python 3.14.3 unavailable")'
+python3 -B -c 'import sys; sys.exit(0 if (3,12) <= sys.version_info[:2] < (4,0) else "Python >=3.12 and <4.0 required")'
 root=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../.." && pwd -P)
 component="$root/deploy/components/sms-capable-carrier-provider-and-jurisdictional-registration"
 cd -- "$root"

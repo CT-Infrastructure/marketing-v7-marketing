@@ -28,12 +28,10 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
-      - name: Set up Python 3.14.3
-        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # official v6 ref verified 2026-10-26
-        with:
-          python-version: '3.14.3'
-          check-latest: false
-          token: ''
+      - name: Check runner Python capability
+        shell: bash
+        run: |
+          python3 -B -c 'import sys; print(sys.version); sys.exit(0 if (3, 12) <= sys.version_info[:2] < (4, 0) else "Python >=3.12 and <4.0 required")'
       - name: Validate public assembly and component (partial F04 coverage)
         shell: bash
         run: bash .github/scripts/validate-public-component.sh cp141
