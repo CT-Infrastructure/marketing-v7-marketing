@@ -1,0 +1,119 @@
+{
+  "component": "CP139",
+  "name": "Google Ads, Meta, other approved networks and their APIs",
+  "deployment_mode": "external-contract-and-mock",
+  "production_enabled": false,
+  "outbound_state": "HOLD",
+  "provider_transport": null,
+  "central_adapter_registration": null,
+  "classification_reason": "Transient pure local policy and prerecorded synthetic journal, no installed service or provider API",
+  "version_source_digest": {
+    "local_contract": "1.0",
+    "public_inputs": "public-inputs.lock.json",
+    "upstream": {
+      "status": "UNKNOWN",
+      "responsible_owner": "provider/platform owner and human privacy/budget reviewers",
+      "reason": "No selected release/provider/runtime qualification authorized or evidenced"
+    }
+  },
+  "processes": {
+    "persistent": [],
+    "transient": [
+      "Python offline policy diagnostics",
+      "in-memory synthetic receipt journal",
+      "offline public-input assembly and test process"
+    ]
+  },
+  "dependencies": {
+    "python": ">=3.12,<4",
+    "F04": "c06f435797142b77aa233fce9067e938942a0f5b",
+    "F05": "30f56e90e1fc103eaf0491838b53ba07f9ab732c",
+    "F16": "e0185b6bc6ef46a22ccf2196ccdbad2a2c9d4b52",
+    "full_F04_validator": "Approved offline jsonschema/referencing bundle required, no installation or shim fallback"
+  },
+  "native_DB_cache": {
+    "local": "none",
+    "upstream": {
+      "status": "UNKNOWN",
+      "responsible_owner": "provider/platform owner and human privacy/budget reviewers",
+      "reason": "No selected release/provider/runtime qualification authorized or evidenced"
+    }
+  },
+  "uid_gid": {
+    "local": "caller unprivileged identity, no service account",
+    "upstream": {
+      "status": "UNKNOWN",
+      "responsible_owner": "provider/platform owner and human privacy/budget reviewers",
+      "reason": "No selected release/provider/runtime qualification authorized or evidenced"
+    }
+  },
+  "ingress_egress": {
+    "local": "none; assembler reads existing local Git blobs only",
+    "upstream": {
+      "status": "UNKNOWN",
+      "responsible_owner": "provider/platform owner and human privacy/budget reviewers",
+      "reason": "No selected release/provider/runtime qualification authorized or evidenced"
+    }
+  },
+  "volumes_ownership": {
+    "local": "no runtime persistent volume; synthetic state returned to caller, no durable ledger",
+    "upstream": {
+      "status": "UNKNOWN",
+      "responsible_owner": "provider/platform owner and human privacy/budget reviewers",
+      "reason": "No selected release/provider/runtime qualification authorized or evidenced"
+    }
+  },
+  "secret_references": {
+    "local": [],
+    "upstream": {
+      "status": "UNKNOWN",
+      "responsible_owner": "provider/platform owner and human privacy/budget reviewers",
+      "reason": "No selected release/provider/runtime qualification authorized or evidenced"
+    }
+  },
+  "health_startup_readiness": {
+    "local": "verified public inputs and strict manifest required; no daemon or health endpoint",
+    "upstream": {
+      "status": "UNKNOWN",
+      "responsible_owner": "provider/platform owner and human privacy/budget reviewers",
+      "reason": "No selected release/provider/runtime qualification authorized or evidenced"
+    }
+  },
+  "migration_backup_restore_rollback": {
+    "local": "Version 2 closed synthetic snapshot with retained proof records and client/provider/account-scoped replay identities; restore validates history/proof chronology and remains runtime HOLD. Proof-free unreconciled version-1 snapshots may migrate losslessly with held reservations/history preserved. Reconciled version-1 snapshots are rejected because observation timestamps/full proofs are absent; preserve original snapshots, reservations and evidence for separately reviewed authenticated-evidence recovery. No automatic reconstruction, retry, external rollback or durable upstream backup/recovery is claimed.",
+    "upstream": {
+      "status": "UNKNOWN",
+      "responsible_owner": "provider/platform owner and human privacy/budget reviewers",
+      "reason": "No selected release/provider/runtime qualification authorized or evidenced"
+    }
+  },
+  "resources": {
+    "local_limits": "Root test admission <=256MiB/process and global<=2 test processes; not measured provider consumption",
+    "CPU_RAM_disk_GPU_upstream": {
+      "status": "UNKNOWN",
+      "responsible_owner": "provider/platform owner and human privacy/budget reviewers",
+      "reason": "No selected release/provider/runtime qualification authorized or evidenced"
+    }
+  },
+  "log_redaction": "No payload/secret logging; generic error categories and opaque synthetic references only",
+  "license": {
+    "local": "repository license applies",
+    "upstream": {
+      "status": "UNKNOWN",
+      "responsible_owner": "provider/platform owner and human privacy/budget reviewers",
+      "reason": "No selected release/provider/runtime qualification authorized or evidenced"
+    }
+  },
+  "SBOM": "stdlib local source plus pinned shared input metadata; external provider SBOM unqualified",
+  "vulnerability_evidence": {
+    "local": "independent source/security review and tests pending",
+    "upstream": {
+      "status": "UNKNOWN",
+      "responsible_owner": "provider/platform owner and human privacy/budget reviewers",
+      "reason": "No selected release/provider/runtime qualification authorized or evidenced"
+    }
+  },
+  "ownership": "F05 providers does not map CP139. Mautic/native permission authorities retain F16 ownership; no competing store or central channel",
+  "installation": "Offline package and component-local public input assembly only; real provider installation/account/API/legal/cost qualification blocked",
+  "acceptance": "No native AC/576/runtime/G02/business/production credit; actual tests/review/currentCI/native protections/root integration remain separate"
+}
