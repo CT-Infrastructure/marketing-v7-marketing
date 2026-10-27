@@ -1,0 +1,165 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "repository": "CT-Infrastructure/marketing-v7-control",
+      "commit": "c06f435797142b77aa233fce9067e938942a0f5b",
+      "source_path": "contracts/core/README.md",
+      "destination": "inputs/F04/contracts/core/README.md",
+      "sha256": "f070513df8ef30a8cd2ed3c75ed8deae066655e42b4dd93a58c84f6506b5cf09",
+      "bytes": 10760
+    },
+    {
+      "repository": "CT-Infrastructure/marketing-v7-control",
+      "commit": "c06f435797142b77aa233fce9067e938942a0f5b",
+      "source_path": "contracts/core/fixtures/action-receipt.json",
+      "destination": "inputs/F04/contracts/core/fixtures/action-receipt.json",
+      "sha256": "1dbd636d83e33e54a71f8994469f33ee4d55d86c84b0c8012687c1074d552f53",
+      "bytes": 818
+    },
+    {
+      "repository": "CT-Infrastructure/marketing-v7-control",
+      "commit": "c06f435797142b77aa233fce9067e938942a0f5b",
+      "source_path": "contracts/core/fixtures/approval-reference.json",
+      "destination": "inputs/F04/contracts/core/fixtures/approval-reference.json",
+      "sha256": "edbfa57fccf8c818cca242f254cfed0d534e6c196901b0c08a2e57b24f1e0855",
+      "bytes": 543
+    },
+    {
+      "repository": "CT-Infrastructure/marketing-v7-control",
+      "commit": "c06f435797142b77aa233fce9067e938942a0f5b",
+      "source_path": "contracts/core/fixtures/event-envelope.json",
+      "destination": "inputs/F04/contracts/core/fixtures/event-envelope.json",
+      "sha256": "aa9ab22ef1b32d69eda55ab7eb86e2e6909153ab7792d36828118cea8f12f32c",
+      "bytes": 567
+    },
+    {
+      "repository": "CT-Infrastructure/marketing-v7-control",
+      "commit": "c06f435797142b77aa233fce9067e938942a0f5b",
+      "source_path": "contracts/core/fixtures/evidence-manifest.json",
+      "destination": "inputs/F04/contracts/core/fixtures/evidence-manifest.json",
+      "sha256": "9cc6e159053361b9ba9daf3e5983122cc3cffdb45bfe15cfd612054128f3b0a4",
+      "bytes": 869
+    },
+    {
+      "repository": "CT-Infrastructure/marketing-v7-control",
+      "commit": "c06f435797142b77aa233fce9067e938942a0f5b",
+      "source_path": "contracts/core/test_contracts.py",
+      "destination": "inputs/F04/contracts/core/test_contracts.py",
+      "sha256": "d9c652695c43bdfe15649bf5b1e2e85b7280b692ce4dd6ab4f2c763c2204aa03",
+      "bytes": 14377
+    },
+    {
+      "repository": "CT-Infrastructure/marketing-v7-control",
+      "commit": "c06f435797142b77aa233fce9067e938942a0f5b",
+      "source_path": "contracts/core/validate.py",
+      "destination": "inputs/F04/contracts/core/validate.py",
+      "sha256": "db6ad80cf8ebf7eb94c9c3a77ff07099efd76aebb6a53aa34696a870fb770454",
+      "bytes": 4958
+    },
+    {
+      "repository": "CT-Infrastructure/marketing-v7-control",
+      "commit": "c06f435797142b77aa233fce9067e938942a0f5b",
+      "source_path": "schemas/runtime/action-receipt.schema.json",
+      "destination": "inputs/F04/schemas/runtime/action-receipt.schema.json",
+      "sha256": "bba9b8f7575d75173709a54324485e2bf6b1034fe63437ab29e2e364876cd08b",
+      "bytes": 6370
+    },
+    {
+      "repository": "CT-Infrastructure/marketing-v7-control",
+      "commit": "c06f435797142b77aa233fce9067e938942a0f5b",
+      "source_path": "schemas/runtime/approval-reference.schema.json",
+      "destination": "inputs/F04/schemas/runtime/approval-reference.schema.json",
+      "sha256": "d415fe1c5ccc3b25d2ef37a28e8b7587ff284973ea93cccfad0896ff3330f9c3",
+      "bytes": 1707
+    },
+    {
+      "repository": "CT-Infrastructure/marketing-v7-control",
+      "commit": "c06f435797142b77aa233fce9067e938942a0f5b",
+      "source_path": "schemas/runtime/common.schema.json",
+      "destination": "inputs/F04/schemas/runtime/common.schema.json",
+      "sha256": "89925df9dd4c6c3aae5ed730b718acb2740aee29527617e9be2bc1d672f7f33f",
+      "bytes": 1845
+    },
+    {
+      "repository": "CT-Infrastructure/marketing-v7-control",
+      "commit": "c06f435797142b77aa233fce9067e938942a0f5b",
+      "source_path": "schemas/runtime/event-envelope.schema.json",
+      "destination": "inputs/F04/schemas/runtime/event-envelope.schema.json",
+      "sha256": "4ff8d60ea4161c0b99dda0cda7f7981ee734c6d2db86d650e503158f199c4e44",
+      "bytes": 4832
+    },
+    {
+      "repository": "CT-Infrastructure/marketing-v7-control",
+      "commit": "c06f435797142b77aa233fce9067e938942a0f5b",
+      "source_path": "schemas/runtime/evidence-manifest.schema.json",
+      "destination": "inputs/F04/schemas/runtime/evidence-manifest.schema.json",
+      "sha256": "757323518a1ae6e987b9b653e6e7e79fd2c77b99b89e12816fe698fd67c61eba",
+      "bytes": 2681
+    },
+    {
+      "repository": "CT-Infrastructure/marketing-v7-control",
+      "commit": "30f56e90e1fc103eaf0491838b53ba07f9ab732c",
+      "source_path": "contracts/adapters/README.md",
+      "destination": "inputs/F05/contracts/adapters/README.md",
+      "sha256": "3b01236452b4b8861ec4a8969bc00c1ad41ddb6648153120ffd294c6e6cb4aa8",
+      "bytes": 11166
+    },
+    {
+      "repository": "CT-Infrastructure/marketing-v7-control",
+      "commit": "30f56e90e1fc103eaf0491838b53ba07f9ab732c",
+      "source_path": "contracts/adapters/catalog.v1.json",
+      "destination": "inputs/F05/contracts/adapters/catalog.v1.json",
+      "sha256": "38611dab19e52884125dc5203e47b4d0a1b6c99c3cd885a83447c7c878f356bc",
+      "bytes": 18321
+    },
+    {
+      "repository": "CT-Infrastructure/marketing-v7-control",
+      "commit": "30f56e90e1fc103eaf0491838b53ba07f9ab732c",
+      "source_path": "contracts/adapters/contract.py",
+      "destination": "inputs/F05/contracts/adapters/contract.py",
+      "sha256": "8cdaeedb31eee0bb0fa513921c0e84e250f8aa50106cfaada3afd05d265ee14e",
+      "bytes": 6929
+    },
+    {
+      "repository": "CT-Infrastructure/marketing-v7-control",
+      "commit": "30f56e90e1fc103eaf0491838b53ba07f9ab732c",
+      "source_path": "contracts/adapters/test_contract.py",
+      "destination": "inputs/F05/contracts/adapters/test_contract.py",
+      "sha256": "2c4e61736ec66cc5aef3942699c3150235add3e7d4c3c76383102b5d931dcc4e",
+      "bytes": 10888
+    },
+    {
+      "repository": "CT-Infrastructure/marketing-v7-control",
+      "commit": "e0185b6bc6ef46a22ccf2196ccdbad2a2c9d4b52",
+      "source_path": "contracts/privacy/eligibility.py",
+      "destination": "inputs/F16/contracts/privacy/eligibility.py",
+      "sha256": "6298966045ef8e5257c990931396ac9fbf1098a2c171fc42becb8bf09db81f9b",
+      "bytes": 9466
+    },
+    {
+      "repository": "CT-Infrastructure/marketing-v7-control",
+      "commit": "e0185b6bc6ef46a22ccf2196ccdbad2a2c9d4b52",
+      "source_path": "contracts/privacy/synthetic-fixture.json",
+      "destination": "inputs/F16/contracts/privacy/synthetic-fixture.json",
+      "sha256": "f4b64819a8aec1b1ec6ec4f90b28104e23db603de6091883a306a9d32b8c317b",
+      "bytes": 535
+    },
+    {
+      "repository": "CT-Infrastructure/marketing-v7-control",
+      "commit": "e0185b6bc6ef46a22ccf2196ccdbad2a2c9d4b52",
+      "source_path": "contracts/privacy/test_eligibility.py",
+      "destination": "inputs/F16/contracts/privacy/test_eligibility.py",
+      "sha256": "527349d108ef6bb214ca4606e0d9c87ad7658b38b23a08ff368d747e940bfd7a",
+      "bytes": 13454
+    },
+    {
+      "repository": "CT-Infrastructure/marketing-v7-control",
+      "commit": "e0185b6bc6ef46a22ccf2196ccdbad2a2c9d4b52",
+      "source_path": "docs/security/privacy/README.md",
+      "destination": "inputs/F16/docs/security/privacy/README.md",
+      "sha256": "eab3a8b6df7f1c615e70434b35d9c9cb0c2323e0596519ffcc0330f5fd070c15",
+      "bytes": 10962
+    }
+  ]
+}
