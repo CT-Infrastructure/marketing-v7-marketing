@@ -279,11 +279,11 @@ def ce(req,*a,**k):
 f04.validate=cv;f04.check_transition=ct;f16.evaluate=ce
 r=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.discover(TESTDIR,pattern='test_*.py'))
 print(json.dumps({'cp139':dict(tests=r.testsRun,skips=len(r.skipped),errors=len(r.errors),failures=len(r.failures),unexpected_successes=len(r.unexpectedSuccesses),calls=seen)}))
-sys.exit(0 if r.wasSuccessful() and r.testsRun==25 and not r.skipped and not r.unexpectedSuccesses and all(seen.values()) else 1)
+sys.exit(0 if r.wasSuccessful() and r.testsRun==31 and not r.skipped and not r.unexpectedSuccesses and all(seen.values()) else 1)
 """.replace('COMPONENT',repr(str(public/COMP))).replace('TESTDIR',repr(str(public/COMP/'tests')))
     for mode,flags in [('normal',[]),('optimized',['-O'])]:
         output=run('component-'+mode,py+flags+['-c',tests],cwd=public)
-        lines=[json.loads(x)['cp139'] for x in output.splitlines() if x.startswith('{"cp139":')];need(len(lines)==1 and lines[0]['tests']==25 and all(lines[0][k]==0 for k in ('skips','errors','failures','unexpected_successes')),'COMPONENT_STRUCTURED_COUNTS')
+        lines=[json.loads(x)['cp139'] for x in output.splitlines() if x.startswith('{"cp139":')];need(len(lines)==1 and lines[0]['tests']==31 and all(lines[0][k]==0 for k in ('skips','errors','failures','unexpected_successes')),'COMPONENT_STRUCTURED_COUNTS')
     need(inventory(public)==pristine_before,'COMPONENT_TEST_SOURCE_DRIFT')
     supplementary=work/'supplementary-f04';shutil.copytree(public,supplementary);seed=supplementary/COMP/'inputs/F04/schemas/event-envelope.example.json';need(not seed.exists(),'SEED_COLLISION');seed.write_bytes(seedlog)
     f04tests=bootstrap+"\nimport unittest,json;sys.path.insert(0,CORE);r=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.discover(CORE,pattern='test_contracts.py'));print(json.dumps({'f04':dict(tests=r.testsRun,skips=len(r.skipped),errors=len(r.errors),failures=len(r.failures),unexpected_successes=len(r.unexpectedSuccesses))}));sys.exit(0 if r.wasSuccessful() and r.testsRun==30 and not r.skipped and not r.unexpectedSuccesses else 1)".replace('CORE',repr(str(supplementary/COMP/'inputs/F04/contracts/core')))
@@ -293,7 +293,7 @@ sys.exit(0 if r.wasSuccessful() and r.testsRun==25 and not r.skipped and not r.u
         lines=[json.loads(x)['f04'] for x in output.splitlines() if x.startswith('{"f04":')];need(lines==[dict(tests=30,skips=0,errors=0,failures=0,unexpected_successes=0)],'F04_STRUCTURED_COUNTS')
     need(inventory(supplementary)==supplementary_before and inventory(deps)==deps_before,'SUPPLEMENTARY_OR_TOOLING_DRIFT')
     need(inventory(ROOT)==source_before,'CHECKOUT_SOURCE_DRIFT')
-    report.update(status='PASS_PUBLIC_CLOSURE',component_tests={'normal':25,'optimized':25,'skips':0},F04_supplementary_tests={'normal':30,'optimized':30,'skips':0},source_unchanged=True,tooling_unchanged=True)
+    report.update(status='PASS_PUBLIC_CLOSURE',component_tests={'normal':31,'optimized':31,'skips':0},F04_supplementary_tests={'normal':30,'optimized':30,'skips':0},source_unchanged=True,tooling_unchanged=True)
 except BaseException as error:
     report.update(status='BLOCKED_OR_FAILED',error_class=type(error).__name__,reason=str(error));raise
 finally:
