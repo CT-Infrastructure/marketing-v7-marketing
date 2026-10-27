@@ -80,7 +80,7 @@
     }
   },
   "migration_backup_restore_rollback": {
-    "local": "version1 closed synthetic snapshot; caller copies state, restore validates all F04 history and remains runtimeHOLD; no replay or external rollback",
+    "local": "Version 2 closed synthetic snapshot with retained proof records and client/provider/account-scoped replay identities; restore validates history/proof chronology and remains runtime HOLD. Proof-free unreconciled version-1 snapshots may migrate losslessly with held reservations/history preserved. Reconciled version-1 snapshots are rejected because observation timestamps/full proofs are absent; preserve original snapshots, reservations and evidence for separately reviewed authenticated-evidence recovery. No automatic reconstruction, retry, external rollback or durable upstream backup/recovery is claimed.",
     "upstream": {
       "status": "UNKNOWN",
       "responsible_owner": "provider/platform owner and human privacy/budget reviewers",

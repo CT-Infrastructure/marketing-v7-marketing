@@ -71,7 +71,7 @@ def assess_ad_intent(intent,consents,budget,*,now,max_age_seconds):
         return copy.deepcopy(denied)
 
 
-MANIFEST_SHA256 = '93e4361f5f90c07c456be3e71b77ffc1e98a4147513f7eb38453ff4e5114a549'
+MANIFEST_SHA256 = '338f1ca2ee94f2cc313a9c93ef281473bac81f81b1f7c2ec009ff948204c3d7b'
 
 def validate_component_manifest(value):
     """Closed reviewed offline configuration; no enablement/transport extensions."""
