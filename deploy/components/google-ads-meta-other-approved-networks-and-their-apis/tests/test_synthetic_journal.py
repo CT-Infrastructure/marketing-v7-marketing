@@ -70,3 +70,108 @@ class JournalTests(unittest.TestCase):
         j=SyntheticJournal(lambda x:None)
         with self.assertRaises(ValueError) as caught:j.reserve(IDENTITY,dict(INTENT,payload_ref='secret with spaces'),now=NOW)
         self.assertNotIn('secret with spaces',str(caught.exception))
+
+
+class JournalReviewRegressionTests(unittest.TestCase):
+    def test_fresh_pre_submission_proof_rejected_without_mutation(self):
+        # Old code accepts this exactly-fresh absence proof (120 seconds old),
+        # even though it predates the recorded submission/UNKNOWN attempt.
+        for outcome in ('NOT_OCCURRED','OCCURRED'):
+            j,key,proofs,_=scenario(outcome)
+            proofs[b'original']['observed_at']='2026-10-27T11:59:00Z'
+            before=j.snapshot()
+            with self.subTest(outcome=outcome),self.assertRaises(ValueError):
+                j.reconcile(key,b'original',now=LATER,max_age_seconds=120)
+            self.assertEqual(before,j.snapshot())
+            self.assertEqual('UNKNOWN',before['actions'][key]['history'][-1]['status'])
+            self.assertIs(before['actions'][key]['history'][-1]['reservation_retained'],True)
+
+    def test_attempt_boundary_and_exact_proof_replay_remain_positive(self):
+        for outcome in ('OCCURRED','NOT_OCCURRED'):
+            j,key,proofs,verifier=scenario(outcome)
+            # Equality with original submission/UNKNOWN is valid, including the
+            # exact freshness boundary; reconciliation is recorded later.
+            proofs[b'original']['observed_at']=NOW
+            receipt=j.reconcile(key,b'original',now='2026-10-27T12:02:00Z',max_age_seconds=120)
+            before=j.snapshot()
+            self.assertEqual(receipt,j.reconcile(key,b'original',now='2026-10-27T12:02:00Z',max_age_seconds=120))
+            self.assertEqual(before,j.snapshot())
+            restored=SyntheticJournal.restore(before,verifier)
+            self.assertEqual(receipt,restored.reconcile(key,b'original',now='2026-10-27T12:02:00Z',max_age_seconds=120))
+            self.assertEqual(before,restored.snapshot())
+            self.assertEqual('HOLD',restored.outbound_state)
+
+    def test_same_native_event_across_account_provider_client_namespaces(self):
+        for partition in ('account_ref','provider_ref','client_ref'):
+            j,first,proofs,verifier=scenario()
+            second_intent=copy.deepcopy(INTENT);second_intent[partition]='synthetic-other-'+partition
+            second_identity=dict(IDENTITY,source_event_id='event-2')
+            second_identity['client_id']=second_intent['client_ref']
+            second=j.reserve(second_identity,second_intent,now=NOW)['action_key']
+            j.record_prerecorded_unknown(second,now=NOW,approval_ref='synthetic-approval-2')
+            second_proof=copy.deepcopy(proofs[b'original']);second_proof['action_key']=second
+            for field in ('account_ref','provider_ref','campaign_ref','revision'):second_proof[field]=second_intent[field]
+            proofs[b'second-original']=second_proof
+            first_receipt=j.reconcile(first,b'original',now=LATER,max_age_seconds=120)
+            with self.subTest(partition=partition):
+                second_receipt=j.reconcile(second,b'second-original',now=LATER,max_age_seconds=120)
+                self.assertEqual('CONFIRMED',second_receipt['outbound_state'])
+                self.assertEqual(first_receipt['reconciliation_ref'],second_receipt['reconciliation_ref'])
+                self.assertNotEqual(first_receipt['action_key'],second_receipt['action_key'])
+                self.assertEqual(2,len(j.snapshot()['proofs']))
+                restored=SyntheticJournal.restore(j.snapshot(),verifier)
+                self.assertEqual(j.snapshot(),restored.snapshot())
+                self.assertEqual(second_receipt,restored.reconcile(second,b'second-original',now=LATER,max_age_seconds=120))
+
+    def test_same_namespace_event_reuse_for_other_action_rejected(self):
+        j,first,proofs,_=scenario()
+        second_identity=dict(IDENTITY,source_event_id='event-2')
+        second=j.reserve(second_identity,INTENT,now=NOW)['action_key']
+        j.record_prerecorded_unknown(second,now=NOW,approval_ref='synthetic-approval-2')
+        proofs[b'second-original']=dict(proofs[b'original'],action_key=second)
+        j.reconcile(first,b'original',now=LATER,max_age_seconds=120)
+        before=j.snapshot()
+        with self.assertRaises(ValueError):j.reconcile(second,b'second-original',now=LATER,max_age_seconds=120)
+        self.assertEqual(before,j.snapshot())
+        proofs[b'original']['evidence_ref']='changed-proof-same-namespace'
+        with self.assertRaises(ValueError):j.reconcile(first,b'original',now=LATER,max_age_seconds=120)
+        self.assertEqual(before,j.snapshot())
+
+    def test_v2_replay_index_proof_and_history_restore_coherence(self):
+        import json
+        from synthetic_journal import fingerprint
+        j,key,_,verifier=scenario();j.reconcile(key,b'original',now=LATER,max_age_seconds=120)
+        original=j.snapshot();self.assertEqual(2,original['version'])
+        event=next(iter(original['proofs']))
+        namespace=json.loads(event)
+        self.assertEqual([INTENT['client_ref'],INTENT['provider_ref'],INTENT['account_ref'],'synthetic-proof'],namespace)
+        for mutation in ('wrong-namespace','digest','proof-before-attempt','proof-after-receipt','receipt-outcome-mismatch','unknown-entry-field'):
+            state=copy.deepcopy(original);entry=state['proofs'][event]
+            if mutation=='wrong-namespace':state['proofs']['synthetic-proof']=state['proofs'].pop(event)
+            elif mutation=='digest':entry['proof_digest']='0'*64
+            elif mutation=='unknown-entry-field':entry['unreviewed']=True
+            else:
+                if mutation=='proof-before-attempt':entry['proof']['observed_at']='2026-10-27T11:59:00Z'
+                elif mutation=='proof-after-receipt':entry['proof']['observed_at']='2026-10-27T12:02:00Z'
+                else:entry['proof']['evidence_ref']='different-from-historical-receipt'
+                entry['proof_digest']=fingerprint(entry['proof'])
+            before=copy.deepcopy(state)
+            with self.subTest(mutation=mutation),self.assertRaises(ValueError):SyntheticJournal.restore(state,verifier)
+            self.assertEqual(before,state)
+        restored=SyntheticJournal.restore(json.loads(json.dumps(original)),verifier)
+        self.assertEqual(original,restored.snapshot())
+
+    def test_explicit_legacy_unreconciled_migration_and_ambiguous_rejection(self):
+        j,key,_,verifier=scenario();legacy=j.snapshot();legacy['version']=1
+        # Empty-proof UNKNOWN history is losslessly migratable, still held.
+        original=copy.deepcopy(legacy);restored=SyntheticJournal.restore(legacy,verifier)
+        self.assertEqual(2,restored.snapshot()['version']);self.assertEqual(original,legacy)
+        self.assertEqual(original['actions'],restored.snapshot()['actions']);self.assertEqual('HOLD',restored.outbound_state)
+        j.reconcile(key,b'original',now=LATER,max_age_seconds=120);v2=j.snapshot();legacy=copy.deepcopy(v2);legacy['version']=1
+        entry=next(iter(v2['proofs'].values()))
+        legacy['proofs']={'synthetic-proof':{'action_key':key,'proof_digest':entry['proof_digest']}}
+        before=copy.deepcopy(legacy)
+        # V1 never stored authenticated observed_at, so accepting it would
+        # silently bypass the new attempt chronology and namespace coherence.
+        with self.assertRaises(ValueError):SyntheticJournal.restore(legacy,verifier)
+        self.assertEqual(before,legacy)

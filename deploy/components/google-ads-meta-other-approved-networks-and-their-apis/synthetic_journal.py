@@ -14,6 +14,29 @@ def canonical(value):
 def fingerprint(value):
     return hashlib.sha256(canonical(value).encode()).hexdigest()
 
+PROOF_FIELDS={'action_key','account_ref','provider_ref','campaign_ref','revision','outcome',
+              'provider_object_ref','observed_at','event_ref','evidence_ref'}
+
+def replay_identity(intent,event_ref):
+    """Opaque native IDs are unique only within client/provider/account scope."""
+    return canonical([intent['client_ref'],intent['provider_ref'],intent['account_ref'],event_ref])
+
+def validate_reconciliation_proof(action,key,proof):
+    """Bind to original attempt history, never a later RECONCILED timestamp."""
+    f16=load_dependency('f16')
+    require(type(proof) is dict and set(proof)==PROOF_FIELDS)
+    require(proof['action_key']==key)
+    require(all(proof[k]==action['intent'][k] for k in ('account_ref','provider_ref','campaign_ref','revision')))
+    require(proof['outcome'] in ('OCCURRED','NOT_OCCURRED') and opaque(proof['event_ref']) and opaque(proof['evidence_ref']))
+    require((proof['outcome']=='OCCURRED' and opaque(proof['provider_object_ref'])) or (proof['outcome']=='NOT_OCCURRED' and proof['provider_object_ref'] is None))
+    submission=[r for r in action['history'] if r['status']=='SUBMITTED']
+    unknown=[r for r in action['history'] if r['status']=='UNKNOWN']
+    require(len(submission)==len(unknown)==1)
+    bound=max(f16.instant(submission[0]['recorded_at']),f16.instant(unknown[0]['recorded_at']))
+    observed=f16.instant(proof['observed_at'])
+    require(observed>=bound)
+    return observed
+
 class SyntheticJournal:
     """The trusted verifier maps original bytes to authenticated fixture evidence.
 
@@ -70,31 +93,33 @@ class SyntheticJournal:
         f16=load_dependency('f16');clock=f16.instant(now)
         require(type(max_age_seconds) is int and max_age_seconds>0)
         proof=copy.deepcopy(self._verifier(original_bytes))
-        fields={'action_key','account_ref','provider_ref','campaign_ref','revision','outcome','provider_object_ref','observed_at','event_ref','evidence_ref'}
-        require(type(proof) is dict and set(proof)==fields)
-        action=self._actions[key];require(proof['action_key']==key)
-        require(all(proof[k]==action['intent'][k] for k in ('account_ref','provider_ref','campaign_ref','revision')))
-        require(proof['outcome'] in ('OCCURRED','NOT_OCCURRED') and opaque(proof['event_ref']) and opaque(proof['evidence_ref']))
+        action=self._actions[key]
+        validate_reconciliation_proof(action,key,proof)
         require(f16.fresh(proof['observed_at'],clock,max_age_seconds))
-        require((proof['outcome']=='OCCURRED' and opaque(proof['provider_object_ref'])) or (proof['outcome']=='NOT_OCCURRED' and proof['provider_object_ref'] is None))
-        pd=fingerprint(proof);event=proof['event_ref']
+        pd=fingerprint(proof);event=replay_identity(action['intent'],proof['event_ref'])
+        entry={'action_key':key,'proof_digest':pd,'proof':copy.deepcopy(proof)}
         if event in self._proofs:
-            require(self._proofs[event]=={'action_key':key,'proof_digest':pd})
+            require(self._proofs[event]==entry)
             return copy.deepcopy(action['history'][-1])
         require(action['history'][-1]['status']=='UNKNOWN')
         receipt=self._next(key,'RECONCILED',now,provider_object_ref=proof['provider_object_ref'],
-            evidence_ref=proof['evidence_ref'],reconciliation_ref=event,reconciliation_outcome=proof['outcome'],
+            evidence_ref=proof['evidence_ref'],reconciliation_ref=proof['event_ref'],reconciliation_outcome=proof['outcome'],
             outbound_state='CONFIRMED' if proof['outcome']=='OCCURRED' else 'HOLD',reservation_retained=proof['outcome']=='OCCURRED')
-        action['history'].append(receipt);self._proofs[event]={'action_key':key,'proof_digest':pd}
+        action['history'].append(receipt);self._proofs[event]=entry
         return copy.deepcopy(receipt)
 
     def snapshot(self):
-        return copy.deepcopy({'version':1,'outbound_state':'HOLD','actions':self._actions,'proofs':self._proofs})
+        return copy.deepcopy({'version':2,'outbound_state':'HOLD','actions':self._actions,'proofs':self._proofs})
 
     @classmethod
     def restore(cls,state,verifier):
         require(type(state) is dict and set(state)=={'version','outbound_state','actions','proofs'})
-        require(type(state['version']) is int and state['version']==1 and state['outbound_state']=='HOLD')
+        require(type(state['version']) is int and state['version'] in (1,2) and state['outbound_state']=='HOLD')
+        # V1 retained only a digest, so reconciled proof chronology cannot be
+        # validated or reconstructed. Migrate only unreconciled V1 snapshots.
+        # Reconciled V1 requires separate authenticated evidence recovery, not
+        # silently accepting history or inventing missing proof fields.
+        require(state['version']==2 or not state['proofs'])
         require(type(state['actions']) is dict and type(state['proofs']) is dict)
         candidate=copy.deepcopy(state);f04=load_dependency('f04');events={}
         for key,action in candidate['actions'].items():
@@ -117,9 +142,17 @@ class SyntheticJournal:
                 if i:f04.check_transition(history[i-1],receipt)
             last=history[-1]
             if last['status']=='RECONCILED':
-                event=last['reconciliation_ref'];require(event not in events);events[event]=key
+                event=replay_identity(action['intent'],last['reconciliation_ref'])
+                require(event not in events);events[event]=key
         require(set(events)==set(candidate['proofs']))
         for event,entry in candidate['proofs'].items():
-            require(type(entry) is dict and set(entry)=={'action_key','proof_digest'} and entry['action_key']==events[event])
-            require(type(entry['proof_digest']) is str and len(entry['proof_digest'])==64 and all(c in '0123456789abcdef' for c in entry['proof_digest']))
+            require(type(entry) is dict and set(entry)=={'action_key','proof_digest','proof'} and entry['action_key']==events[event])
+            key=entry['action_key'];action=candidate['actions'][key];last=action['history'][-1]
+            proof=entry['proof'];observed=validate_reconciliation_proof(action,key,proof)
+            require(event==replay_identity(action['intent'],proof['event_ref']))
+            require(entry['proof_digest']==fingerprint(proof))
+            require(observed<=load_dependency('f16').instant(last['recorded_at']))
+            require(all(proof[p]==last[r] for p,r in (('event_ref','reconciliation_ref'),
+                    ('outcome','reconciliation_outcome'),('provider_object_ref','provider_object_ref'),
+                    ('evidence_ref','evidence_ref'))))
         obj=cls(verifier);obj._actions=candidate['actions'];obj._proofs=candidate['proofs'];return obj
